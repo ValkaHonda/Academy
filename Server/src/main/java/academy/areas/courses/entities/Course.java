@@ -18,8 +18,8 @@ public class Course extends StudyingSubject {
     private Set<Teacher> teachers;
     private Set<Admin> admins;
     private Module module;
-//    private Set<Lesson> lessons;
-      private Set<Student> students;
+    private Set<Lesson> lessons;
+    private Set<Student> students;
 
     public Course(String name, Date creationDate, Date lastModifiedDate, boolean isActive) {
         super(name, creationDate, lastModifiedDate, isActive);
@@ -63,5 +63,14 @@ public class Course extends StudyingSubject {
 
     public void setModule(Module module) {
         this.module = module;
+    }
+
+    @OneToMany(mappedBy = "course")
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(Set<Lesson> lessons) {
+        this.lessons = lessons;
     }
 }

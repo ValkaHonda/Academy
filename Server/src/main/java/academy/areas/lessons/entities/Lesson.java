@@ -13,7 +13,7 @@ import java.util.Set;
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Lesson extends StudyingSubject {
     private Set<Teacher> teachers;
-//    private Course course;
+    private Course course;
 //    private Date lesson_date;
 //    private String videoURL;
 //    private String presentation;
@@ -32,5 +32,15 @@ public class Lesson extends StudyingSubject {
 
     public void setTeachers(Set<Teacher> teachers) {
         this.teachers = teachers;
+    }
+
+    @ManyToOne()
+    @JoinColumn(name = "courseId")
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }
