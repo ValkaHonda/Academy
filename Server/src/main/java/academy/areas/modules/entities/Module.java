@@ -24,7 +24,7 @@ public class Module extends StudyingSubject {
         super(name, creationDate, lastModifiedDate, isActive);
     }
 
-    @Transient//@ManyToMany(mappedBy = "modules")
+    @ManyToMany(mappedBy = "modules")
     public Set<Admin> getAdmins() {
         return admins;
     }
