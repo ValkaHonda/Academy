@@ -22,7 +22,8 @@ public class Student extends User {
     public Student() {
     }
 
-    @Transient
+    @ManyToOne()
+    @JoinColumn(name = "module_id")
     public Module getModule() {
         return module;
     }

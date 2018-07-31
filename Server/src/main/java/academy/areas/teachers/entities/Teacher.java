@@ -14,7 +14,6 @@ import java.util.Set;
 public class Teacher extends User {
     private Set<Course> courses;
     private Set<Lesson> lessons;
-    private String someText;
 
     public Teacher(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate) {
         super(userName, firstName, lastName, email, password, createDate, lastModifiedDate);
@@ -41,14 +40,5 @@ public class Teacher extends User {
 
     public void setLessons(Set<Lesson> lessons) {
         this.lessons = lessons;
-    }
-
-    @Column(name = "some_text")
-    public String getSomeText() {
-        return someText;
-    }
-
-    public void setSomeText(String someText) {
-        this.someText = someText;
     }
 }

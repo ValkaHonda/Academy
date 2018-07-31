@@ -42,7 +42,7 @@ public class Module extends StudyingSubject {
         this.courses = courses;
     }
 
-    @Transient
+    @OneToMany(mappedBy = "module")
     public Set<Student> getStudents() {
         return students;
     }
