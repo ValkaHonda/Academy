@@ -12,67 +12,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Module.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/entities/Module.java">
+      <file leaf-file-name="Teacher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/teachers/entities/Teacher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+            <state relative-caret-position="141">
+              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#855#856#0" expanded="true" />
-                <element signature="e#884#885#0" expanded="true" />
-                <element signature="e#932#933#0" expanded="true" />
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#1007#1008#0" expanded="true" />
-                <element signature="e#1037#1038#0" expanded="true" />
-                <element signature="e#1088#1089#0" expanded="true" />
-                <element signature="e#1126#1127#0" expanded="true" />
-                <element signature="e#1167#1168#0" expanded="true" />
-                <element signature="e#1198#1199#0" expanded="true" />
-                <element signature="e#1252#1253#0" expanded="true" />
-                <element signature="e#1292#1293#0" expanded="true" />
+                <element signature="e#945#946#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+                <element signature="e#1026#1027#0" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Admin.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/admins/entities/Admin.java">
+      <file leaf-file-name="Lesson.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+            <state relative-caret-position="475">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1039#1040#0" expanded="true" />
-                <element signature="e#1069#1070#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
-                <element signature="e#1158#1159#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/courses/entities/Course.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/users/entities/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-526">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
-                <element signature="e#1220#1221#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,16 +94,16 @@
         <option value="$PROJECT_DIR$/src/main/java/blog/areas/articles/controllers/ArticleRestController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/entities/Modul.java" />
-        <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/users/entities/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/academy/areas/teachers/entities/Teacher.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/students/entities/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/studingSubject/entities/StudingSubject.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/studyingSubject/entities/StudingSubject.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/studyingSubject/entities/StudyingSubject.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/entities/Module.java" />
-        <option value="$PROJECT_DIR$/src/main/java/academy/areas/courses/entities/Course.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/admins/entities/Admin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/academy/areas/courses/entities/Course.java" />
+        <option value="$PROJECT_DIR$/src/main/java/academy/areas/teachers/entities/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java" />
       </list>
     </option>
   </component>
@@ -452,12 +414,12 @@
       <workItem from="1532972783884" duration="54000" />
       <workItem from="1533024814885" duration="188000" />
       <workItem from="1533025053840" duration="19000" />
-      <workItem from="1533025610393" duration="13821000" />
+      <workItem from="1533025610393" duration="15025000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144637000" />
+    <option name="totallyTimeSpent" value="145841000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -562,16 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/BlogApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -583,28 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="64" selection-start-line="1" selection-start-column="64" selection-end-line="1" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/teachers/entities/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
-            <element signature="e#1230#1231#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -626,19 +556,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/studyingSubject/entities/StudyingSubject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-134">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/entities/Module.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
+        <state relative-caret-position="621">
           <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -658,10 +578,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/courses/entities/Course.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/admins/entities/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="160">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -670,7 +590,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/users/entities/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-526">
+        <state relative-caret-position="154">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -680,16 +600,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/admins/entities/Admin.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/studyingSubject/entities/StudyingSubject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+        <state relative-caret-position="176">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1039#1040#0" expanded="true" />
-            <element signature="e#1069#1070#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1158#1159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/courses/entities/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1019#1020#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/teachers/entities/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1026#1027#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

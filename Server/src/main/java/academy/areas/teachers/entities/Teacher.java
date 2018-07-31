@@ -1,6 +1,7 @@
 package academy.areas.teachers.entities;
 
 import academy.areas.courses.entities.Course;
+import academy.areas.lessons.entities.Lesson;
 import academy.areas.users.entities.User;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ import java.util.Set;
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Teacher extends User {
     private Set<Course> courses;
-    private Set<Teacher> teachers;
+    private Set<Lesson> lessons;
     private String someText;
 
     public Teacher(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate) {
@@ -21,7 +22,9 @@ public class Teacher extends User {
 
     public Teacher() { }
 
-    @Transient
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "teachers_courses")
     public Set<Course> getCourses() {
         return courses;
     }
@@ -30,13 +33,13 @@ public class Teacher extends User {
         this.courses = courses;
     }
 
-    @Transient
-    public Set<Teacher> getTeachers() {
-        return teachers;
+    @Transient // here
+    public Set<Lesson> getLessons() {
+        return lessons;
     }
 
-    public void setTeachers(Set<Teacher> teachers) {
-        this.teachers = teachers;
+    public void setLessons(Set<Lesson> lessons) {
+        this.lessons = lessons;
     }
 
     @Column(name = "some_text")
