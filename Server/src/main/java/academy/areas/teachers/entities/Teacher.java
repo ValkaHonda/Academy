@@ -15,8 +15,16 @@ public class Teacher extends User {
     private Set<Course> courses;
     private Set<Lesson> lessons;
 
-    public Teacher(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate) {
-        super(userName, firstName, lastName, email, password, createDate, lastModifiedDate);
+    public Teacher(
+            String userName,
+            String firstName,
+            String lastName,
+            String email,
+            String password,
+            Date createDate,
+            Date lastModifiedDate,
+            boolean isActive) {
+        super(userName, firstName, lastName, email, password, createDate, lastModifiedDate,isActive);
     }
 
     public Teacher() { }

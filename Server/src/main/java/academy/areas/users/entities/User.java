@@ -14,8 +14,9 @@ public abstract class User {
     private String password;
     private Date createDate;
     private Date lastModifiedDate;
+    private boolean isActive;
 
-    public User(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate) {
+    public User(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate, boolean isActive) {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,8 +24,8 @@ public abstract class User {
         this.password = password;
         this.createDate = createDate;
         this.lastModifiedDate = lastModifiedDate;
+        this.isActive = isActive;
     }
-
     public User() { }
 
     @Id
@@ -99,5 +100,14 @@ public abstract class User {
 
     public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
+    }
+
+    @Column(name = "active")
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }

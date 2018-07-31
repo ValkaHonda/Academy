@@ -16,8 +16,15 @@ import java.util.Set;
 public class Admin extends User {
     private Set<Module> modules;
     private Set<Course> courses;
-    public Admin(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate) {
-        super(userName, firstName, lastName, email, password, createDate, lastModifiedDate);
+    public Admin(String userName,
+                 String firstName,
+                 String lastName,
+                 String email,
+                 String password,
+                 Date createDate,
+                 Date lastModifiedDate,
+                 boolean isActive) {
+        super(userName, firstName, lastName, email, password, createDate, lastModifiedDate,isActive);
     }
 
     public Admin() {

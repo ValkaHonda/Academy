@@ -11,7 +11,36 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ModuleRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/repositories/ModuleRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentRepository.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/students/repositories/StudentRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+=======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+>>>>>>> controller
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -166,6 +195,10 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="academy" type="462c0819:PsiDirectoryNode" />
               <item name="areas" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dev
               <item name="admins" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -197,7 +230,76 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="academy" type="462c0819:PsiDirectoryNode" />
               <item name="areas" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="courses" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="academy" type="462c0819:PsiDirectoryNode" />
+              <item name="areas" type="462c0819:PsiDirectoryNode" />
               <item name="lessons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="academy" type="462c0819:PsiDirectoryNode" />
+              <item name="areas" type="462c0819:PsiDirectoryNode" />
+              <item name="lessons" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="academy" type="462c0819:PsiDirectoryNode" />
+              <item name="areas" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="academy" type="462c0819:PsiDirectoryNode" />
+              <item name="areas" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="academy" type="462c0819:PsiDirectoryNode" />
+              <item name="areas" type="462c0819:PsiDirectoryNode" />
+              <item name="students" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="academy" type="462c0819:PsiDirectoryNode" />
+              <item name="areas" type="462c0819:PsiDirectoryNode" />
+              <item name="teachers" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> dev
+              <item name="lessons" type="462c0819:PsiDirectoryNode" />
+>>>>>>> controller
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -218,7 +320,29 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="academy" type="462c0819:PsiDirectoryNode" />
               <item name="areas" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="academy" type="462c0819:PsiDirectoryNode" />
+              <item name="areas" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="students" type="462c0819:PsiDirectoryNode" />
+>>>>>>> controller
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -442,7 +566,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="154320000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="153747000" />
+=======
+    <option name="totallyTimeSpent" value="154309000" />
+>>>>>>> controller
+>>>>>>> dev
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -469,7 +601,11 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.6361149" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+<<<<<<< HEAD
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22721355" />
+=======
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22721355" />
+>>>>>>> controller
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968536" />
