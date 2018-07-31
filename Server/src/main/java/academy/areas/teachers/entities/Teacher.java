@@ -7,4 +7,5 @@ import java.util.Set;
 
 public class Teacher extends User {
     private Set<Course> courses;
+    private Set<Teacher> teachers;
 }
