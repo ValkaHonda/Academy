@@ -14,10 +14,10 @@ import java.util.Set;
 public class Lesson extends StudyingSubject {
     private Set<Teacher> teachers;
     private Course course;
-//    private Date lesson_date;
-//    private String videoURL;
-//    private String presentation;
-//    private String homework;
+    private Date lessonDate;
+    private byte[] presentation;
+    private byte[] homework;
+    private String videoURL;
 
     public Lesson(String name, Date creationDate, Date lastModifiedDate, boolean isActive) {
         super(name, creationDate, lastModifiedDate, isActive);
@@ -42,5 +42,42 @@ public class Lesson extends StudyingSubject {
 
     public void setCourse(Course course) {
         this.course = course;
+    }
+
+    @Column(name="lesson_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getLessonDate() {
+        return lessonDate;
+    }
+
+    public void setLessonDate(Date lessonDate) {
+        this.lessonDate = lessonDate;
+    }
+
+    @Column(name = "presentation")
+    public byte[] getPresentation() {
+        return presentation;
+    }
+
+    public void setPresentation(byte[] presentation) {
+        this.presentation = presentation;
+    }
+
+    @Column(name = "homework")
+    public byte[] getHomework() {
+        return homework;
+    }
+
+    public void setHomework(byte[] homework) {
+        this.homework = homework;
+    }
+
+    @Column(name = "video_url")
+    public String getVideoURL() {
+        return videoURL;
+    }
+
+    public void setVideoURL(String videoURL) {
+        this.videoURL = videoURL;
     }
 }
