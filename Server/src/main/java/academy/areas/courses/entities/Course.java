@@ -17,7 +17,7 @@ import java.util.Set;
 public class Course extends StudyingSubject {
     private Set<Teacher> teachers;
     private Set<Admin> admins;
-//    private Module module;
+    private Module module;
 //    private Set<Lesson> lessons;
       private Set<Student> students;
 
@@ -53,5 +53,15 @@ public class Course extends StudyingSubject {
 
     public void setAdmins(Set<Admin> admins) {
         this.admins = admins;
+    }
+
+    @ManyToOne()
+    @JoinColumn(name = "moduleId")
+    public Module getModule() {
+        return module;
+    }
+
+    public void setModule(Module module) {
+        this.module = module;
     }
 }

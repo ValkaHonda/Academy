@@ -33,7 +33,7 @@ public class Module extends StudyingSubject {
         this.admins = admins;
     }
 
-    @Transient
+    @OneToMany(mappedBy = "module")
     public Set<Course> getCourses() {
         return courses;
     }
