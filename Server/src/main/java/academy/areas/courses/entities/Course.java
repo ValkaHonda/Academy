@@ -16,7 +16,7 @@ import java.util.Set;
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Course extends StudyingSubject {
     private Set<Teacher> teachers;
-//    private Set<Admin> admins;
+    private Set<Admin> admins;
 //    private Module module;
 //    private Set<Lesson> lessons;
       private Set<Student> students;
@@ -27,7 +27,7 @@ public class Course extends StudyingSubject {
 
     public Course() { }
 
-//    @Transient // many to many
+
     @ManyToMany(mappedBy = "courses")
     public Set<Teacher> getTeachers() {
         return teachers;
@@ -44,5 +44,14 @@ public class Course extends StudyingSubject {
 
     public void setStudents(Set<Student> students) {
         this.students = students;
+    }
+
+    @ManyToMany(mappedBy = "courses")
+    public Set<Admin> getAdmins() {
+        return admins;
+    }
+
+    public void setAdmins(Set<Admin> admins) {
+        this.admins = admins;
     }
 }

@@ -15,6 +15,7 @@ import java.util.Set;
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Admin extends User {
     private Set<Module> modules;
+    private Set<Course> courses;
     public Admin(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate) {
         super(userName, firstName, lastName, email, password, createDate, lastModifiedDate);
     }
@@ -30,5 +31,15 @@ public class Admin extends User {
 
     public void setModules(Set<Module> modules) {
         this.modules = modules;
+    }
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "admins_courses")
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
     }
 }
