@@ -33,7 +33,8 @@ public class Teacher extends User {
         this.courses = courses;
     }
 
-    @Transient // here
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "teachers_lessons")
     public Set<Lesson> getLessons() {
         return lessons;
     }
