@@ -15,17 +15,6 @@ public class Student extends User {
     private Module module;
     private Set<Course> courses;
 
-    private String tempName;
-
-    @Column(name = "tempName")
-    public String getTempName() {
-        return tempName;
-    }
-
-    public void setTempName(String tempName) {
-        this.tempName = tempName;
-    }
-
     public Student(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate) {
         super(userName, firstName, lastName, email, password, createDate, lastModifiedDate);
     }
