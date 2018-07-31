@@ -2,7 +2,7 @@ package academy.areas.studingSubject.entities;
 
 import java.util.Date;
 
-public class StudingSubject {
+public abstract class StudingSubject {
     private Integer id;
     private String name;
     private Date creationDate;
