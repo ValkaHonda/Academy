@@ -19,7 +19,7 @@ public class Course extends StudyingSubject {
 //    private Set<Admin> admins;
 //    private Module module;
 //    private Set<Lesson> lessons;
-//    private Set<Student> students;
+      private Set<Student> students;
 
     public Course(String name, Date creationDate, Date lastModifiedDate, boolean isActive) {
         super(name, creationDate, lastModifiedDate, isActive);
@@ -35,5 +35,14 @@ public class Course extends StudyingSubject {
 
     public void setTeachers(Set<Teacher> teachers) {
         this.teachers = teachers;
+    }
+
+    @ManyToMany(mappedBy = "courses")
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
     }
 }

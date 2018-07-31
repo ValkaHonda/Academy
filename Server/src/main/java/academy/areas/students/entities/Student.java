@@ -32,7 +32,8 @@ public class Student extends User {
         this.module = module;
     }
 
-    @Transient
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "students_courses")
     public Set<Course> getCourses() {
         return courses;
     }
