@@ -15,8 +15,16 @@ public class Student extends User {
     private Module module;
     private Set<Course> courses;
 
-    public Student(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate) {
-        super(userName, firstName, lastName, email, password, createDate, lastModifiedDate);
+    public Student(
+            String userName,
+            String firstName,
+            String lastName,
+            String email,
+            String password,
+            Date createDate,
+            Date lastModifiedDate,
+            boolean isActive) {
+        super(userName, firstName, lastName, email, password, createDate, lastModifiedDate,isActive);
     }
 
     public Student() {
