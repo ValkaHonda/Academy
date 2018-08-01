@@ -1,6 +1,8 @@
 package academy.areas.courses.controllers;
 
 import academy.areas.courses.entities.Course;
+import academy.areas.courses.services.CourseServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,6 +10,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/courses")
 public class CourseRestController {
+    private CourseServices courseServices;
+
+    @Autowired
+    public CourseRestController(final CourseServices courseServices) {
+        this.courseServices = courseServices;
+    }
+
     @GetMapping("/getAll")
     public List<Course> getCourses(){
         return null;
