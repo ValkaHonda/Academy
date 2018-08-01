@@ -31,11 +31,9 @@ public class AdminServicesImpl implements AdminServices{
     public Integer createAdmin(final Admin admin) {
         if (admin != null){
             this.adminRepository.saveAndFlush(admin);
-            return this.adminRepository
-                    .findAdminByUserName(admin.getUserName())
-                    .getId();
+            return admin.getId();
         }
-        return -1;
+        return null;
     }
 
     @Override

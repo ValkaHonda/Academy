@@ -34,8 +34,7 @@ public class StudentRestController {
     }
     @PostMapping("/createStudent")
     public @ResponseBody int createStudent(@RequestBody Student student){
-        this.studentService.addStudent(student);
-        return this.studentService.findStudentByUserName(student.getUserName()).getId();
+        return this.studentService.addStudent(student);
     }
     @PutMapping("/updateStudent")
     public void updateUser(@RequestBody Student student){

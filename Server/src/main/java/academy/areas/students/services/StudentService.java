@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface StudentService {
     List<Student> getAllStudents();
-    void addStudent(final Student student);
+    Integer addStudent(final Student student);
     Student findStudentById(final Integer id);
     Student findStudentByUserName(final String userName);
     void disableStudentById(final Integer id);
