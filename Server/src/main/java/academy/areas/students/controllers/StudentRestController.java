@@ -24,26 +24,21 @@ public class StudentRestController {
     public Student getStudentById(@PathVariable final Integer id){
         return this.studentService.findStudentById(id);
     }
-
-
-
-
-
-
-   //in progress
-
-
-
-
-
-
-    @PostMapping("/saveStudent")
+    @GetMapping("/findByUserName/{userName}")
+    public Student getStudentByUserName(@PathVariable final String userName){
+        return this.studentService.findStudentByUserName(userName);
+    }
+    @DeleteMapping("/delete/{id}")
+    public void deleteStudent(@PathVariable final Integer id){
+        this.studentService.disableStudentById(id);
+    }
+    @PostMapping("/createStudent")
     public @ResponseBody int createStudent(@RequestBody Student student){
         this.studentService.addStudent(student);
-        return 100;
+        return this.studentService.findStudentByUserName(student.getUserName()).getId();
     }
-    @DeleteMapping("/deleteStudent/{id}")
-    public void deleteStudent(@PathVariable final Integer id){
-
+    @PutMapping("/updateStudent")
+    public void updateUser(@RequestBody Student student){
+        this.studentService.updateStudent(student);
     }
 }

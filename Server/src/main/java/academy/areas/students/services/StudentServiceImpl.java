@@ -31,4 +31,25 @@ public class StudentServiceImpl implements StudentService{
         return this.studentRepository
                 .findStudentByIdAndActiveTrue(id);
     }
+
+    @Override
+    public Student findStudentByUserName(String userName) {
+        return this.studentRepository.findStudentByUserNameAndActiveTrue(userName);
+    }
+
+    @Override
+    public void disableStudentById(Integer id) {
+        Student student = this.findStudentById(id);
+        if (student != null){
+            student.setActive(false);
+            this.studentRepository.saveAndFlush(student);
+        }
+    }
+
+    @Override
+    public void updateStudent(Student student) {
+        if (this.findStudentById(student.getId()) != null) {
+            this.studentRepository.saveAndFlush(student);
+        }
+    }
 }
