@@ -20,4 +20,12 @@ public class CourseRestController {
     public @ResponseBody Integer createCourse(@RequestBody Course course){
         return null;
     }
+    @PutMapping("/update")
+    public void updateCourse(@RequestBody Course course){
+
+    }
+    @DeleteMapping("/delete/{id}")
+    public void disableCourse(@PathVariable final Integer id){
+
+    }
 }
