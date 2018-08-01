@@ -20,9 +20,30 @@ public class StudentRestController {
     public List<Student> getStudents(){
         return this.studentService.getAllStudents();
     }
+    @GetMapping("/findById/{id}")
+    public Student getStudentById(@PathVariable final Integer id){
+        return this.studentService.findStudentById(id);
+    }
+
+
+
+
+
+
+   //in progress
+
+
+
+
+
+
     @PostMapping("/saveStudent")
     public @ResponseBody int createStudent(@RequestBody Student student){
         this.studentService.addStudent(student);
         return 100;
+    }
+    @DeleteMapping("/deleteStudent/{id}")
+    public void deleteStudent(@PathVariable final Integer id){
+
     }
 }

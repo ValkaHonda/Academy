@@ -25,4 +25,10 @@ public class StudentServiceImpl implements StudentService{
     public void addStudent(Student student) {
         this.studentRepository.saveAndFlush(student);
     }
+
+    @Override
+    public Student findStudentById(final Integer id) {
+        return this.studentRepository
+                .findStudentByIdAndActiveTrue(id);
+    }
 }
