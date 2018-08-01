@@ -12,6 +12,7 @@ import java.util.List;
 @RequestMapping("/admins")
 public class AdminRestController {
     private AdminServices adminServices;
+
     @Autowired
     public AdminRestController(final AdminServices adminServices) {
         this.adminServices = adminServices;
