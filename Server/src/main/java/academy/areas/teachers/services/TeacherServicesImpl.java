@@ -1,29 +1,34 @@
 package academy.areas.teachers.services;
 
+import academy.areas.courses.entities.Course;
+import academy.areas.courses.repositories.CourseRepository;
 import academy.areas.students.entities.Student;
 import academy.areas.teachers.entities.Teacher;
 import academy.areas.teachers.repositories.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class TeacherServicesImpl implements TeacherServices {
     private TeacherRepository teacherRepository;
+    private CourseRepository courseRepository;
 
     @Autowired
-    public TeacherServicesImpl(final TeacherRepository teacherRepository) {
+    public TeacherServicesImpl(final TeacherRepository teacherRepository
+        , final CourseRepository courseRepository) {
         this.teacherRepository = teacherRepository;
+        this.courseRepository = courseRepository;
     }
 
     @Override
     public Integer createTeacher(Teacher teacher) {
         if (teacher != null){
             this.teacherRepository.saveAndFlush(teacher);
-            return this.teacherRepository
-                    .findTeacherByUserNameAndActiveTrue(teacher.getUserName())
-                    .getId();
+            return teacher.getId();
         }
         return null;
     }
