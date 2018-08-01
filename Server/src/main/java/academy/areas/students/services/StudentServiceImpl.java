@@ -17,10 +17,8 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public List<Student> getAllUsers() {
-        Student student = new Student("honda", "Valka", "aleksandrov", "mail", "somepass", null, null,true);
-        this.addStudent(student);
-        return this.studentRepository.findAll();
+    public List<Student> getAllStudents() {
+        return this.studentRepository.findAllByActiveTrue();
     }
 
     @Override

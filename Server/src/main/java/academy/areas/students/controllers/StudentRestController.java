@@ -3,9 +3,7 @@ package academy.areas.students.controllers;
 import academy.areas.students.entities.Student;
 import academy.areas.students.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,8 +16,13 @@ public class StudentRestController {
     public StudentRestController(final StudentService studentService) {
         this.studentService = studentService;
     }
-    @GetMapping("/allUsers")
-    public List<Student> getUsers(){
-        return this.studentService.getAllUsers();
+    @GetMapping("/allStudents")
+    public List<Student> getStudents(){
+        return this.studentService.getAllStudents();
+    }
+    @PostMapping("/saveStudent")
+    public @ResponseBody int createStudent(@RequestBody Student student){
+        this.studentService.addStudent(student);
+        return 100;
     }
 }
