@@ -37,7 +37,7 @@ public abstract class User {
     public void setId(Integer id) {
         this.id = id;
     }
-    @Column(name ="user_name")
+    @Column(name ="user_name", unique=true)
     public String getUserName() {
         return userName;
     }
