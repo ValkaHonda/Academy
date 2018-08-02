@@ -16,7 +16,6 @@ import java.util.Set;
 public class Teacher extends User {
     private Set<Course> courses;
 
-
     public Teacher(
             String userName,
             String firstName,
