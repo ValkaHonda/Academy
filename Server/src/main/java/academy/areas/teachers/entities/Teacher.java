@@ -15,7 +15,7 @@ import java.util.Set;
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Teacher extends User {
     private Set<Course> courses;
-    private Set<Lesson> lessons;
+
 
     public Teacher(
             String userName,
@@ -48,15 +48,5 @@ public class Teacher extends User {
 
     public void setCourses(Set<Course> courses) {
         this.courses = courses;
-    }
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "teachers_lessons")
-    public Set<Lesson> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(Set<Lesson> lessons) {
-        this.lessons = lessons;
     }
 }

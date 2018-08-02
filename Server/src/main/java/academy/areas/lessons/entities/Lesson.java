@@ -13,7 +13,6 @@ import java.util.Set;
 @Table(name = "lessons")
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Lesson extends StudyingSubject {
-    private Set<Teacher> teachers;
     private Course course;
     private Date lessonDate;
     private byte[] presentation;
@@ -25,15 +24,6 @@ public class Lesson extends StudyingSubject {
     }
 
     public Lesson() { }
-
-    @ManyToMany(mappedBy = "lessons")
-    public Set<Teacher> getTeachers() {
-        return teachers;
-    }
-
-    public void setTeachers(Set<Teacher> teachers) {
-        this.teachers = teachers;
-    }
 
     @ManyToOne()
     @JoinColumn(name = "courseId")
