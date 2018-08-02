@@ -6,6 +6,7 @@ import academy.areas.modules.entities.Module;
 import academy.areas.students.entities.Student;
 import academy.areas.studyingSubject.entities.StudyingSubject;
 import academy.areas.teachers.entities.Teacher;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -29,6 +30,7 @@ public class Course extends StudyingSubject {
 
 
     @ManyToMany(mappedBy = "courses")
+    @JsonIgnoreProperties("courses")
     public Set<Teacher> getTeachers() {
         return teachers;
     }

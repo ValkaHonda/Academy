@@ -5,6 +5,7 @@ import academy.areas.courses.repositories.CourseRepository;
 import academy.areas.students.entities.Student;
 import academy.areas.teachers.entities.Teacher;
 import academy.areas.teachers.repositories.TeacherRepository;
+import academy.areas.users.repositories.AbstractRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,13 +16,12 @@ import java.util.Set;
 @Service
 public class TeacherServicesImpl implements TeacherServices {
     private TeacherRepository teacherRepository;
-    private CourseRepository courseRepository;
+    private AbstractRepository<Teacher> abstractRepository;
 
     @Autowired
     public TeacherServicesImpl(final TeacherRepository teacherRepository
-        , final CourseRepository courseRepository) {
+        , final AbstractRepository<Teacher> abstractRepository) {
         this.teacherRepository = teacherRepository;
-        this.courseRepository = courseRepository;
     }
 
     @Override
@@ -35,6 +35,10 @@ public class TeacherServicesImpl implements TeacherServices {
 
     @Override
     public List<Teacher> getAllTeachers() {
+        System.out.println("could be a bug");
+//        Not ready for abstractRepository!!!!!!!!!!!!!
+//        System.out.println(this.abstractRepository.findAllByActiveTrue());
+        System.out.println("No?");
         return this.teacherRepository.findAllByActiveTrue();
     }
 
