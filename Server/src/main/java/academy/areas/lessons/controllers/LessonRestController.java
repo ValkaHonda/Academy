@@ -31,10 +31,10 @@ public class LessonRestController {
     }
     @PutMapping("/update")
     public void updateLesson(@RequestBody Lesson lesson){
-
+        this.updateLesson(lesson);
     }
     @DeleteMapping("/delete/{id}")
     public void disableLesson(@PathVariable final Integer id){
-
+        this.lessonServices.disableLesson(id);
     }
 }

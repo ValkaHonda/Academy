@@ -1,8 +1,11 @@
 package academy.areas.lessons.services;
 
+import academy.areas.lessons.entities.Lesson;
 import academy.areas.lessons.repositories.LessonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class LessonServicesImpl implements LessonServices{
@@ -11,5 +14,34 @@ public class LessonServicesImpl implements LessonServices{
     @Autowired
     public LessonServicesImpl(final LessonRepository lessonRepository) {
         this.lessonRepository = lessonRepository;
+    }
+
+    @Override
+    public List<Lesson> getAllLessons() {
+        return this.lessonRepository.findAllByActiveTrue();
+    }
+
+    @Override
+    public Lesson getLesson(Integer id) {
+        return this.lessonRepository.findLessonByIdAndActiveTrue(id);
+    }
+
+    @Override
+    public Integer createLesson(Lesson lesson) {
+        if (lesson != null){
+            this.lessonRepository.saveAndFlush(lesson);
+            return lesson.getId();
+        }
+        return null;
+    }
+
+    @Override
+    public void updateLesson(Lesson lesson) {
+
+    }
+
+    @Override
+    public void disableLesson(Integer id) {
+
     }
 }
