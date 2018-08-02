@@ -5,7 +5,6 @@ import academy.areas.courses.repositories.CourseRepository;
 import academy.areas.students.entities.Student;
 import academy.areas.teachers.entities.Teacher;
 import academy.areas.teachers.repositories.TeacherRepository;
-import academy.areas.users.repositories.AbstractRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +15,9 @@ import java.util.Set;
 @Service
 public class TeacherServicesImpl implements TeacherServices {
     private TeacherRepository teacherRepository;
-    private AbstractRepository<Teacher> abstractRepository;
 
     @Autowired
-    public TeacherServicesImpl(final TeacherRepository teacherRepository
-        , final AbstractRepository<Teacher> abstractRepository) {
+    public TeacherServicesImpl(final TeacherRepository teacherRepository) {
         this.teacherRepository = teacherRepository;
     }
 
