@@ -2,6 +2,8 @@ package academy.areas.courses.services;
 
 import academy.areas.courses.entities.Course;
 import academy.areas.courses.repositories.CourseRepository;
+import academy.areas.lessons.entities.Lesson;
+import academy.areas.lessons.services.LessonServices;
 import academy.areas.teachers.entities.Teacher;
 import academy.areas.teachers.repositories.TeacherRepository;
 import academy.areas.teachers.services.TeacherServices;
@@ -14,11 +16,15 @@ import java.util.List;
 public class CourseServicesImpl implements  CourseServices {
     private CourseRepository courseRepository;
     private TeacherServices teacherServices;
+    private LessonServices lessonServices;
 
     @Autowired
-    public CourseServicesImpl(final CourseRepository courseRepository,final TeacherServices teacherServices) {
+    public CourseServicesImpl(final CourseRepository courseRepository,
+                              final TeacherServices teacherServices,
+                              final LessonServices lessonServices) {
         this.courseRepository = courseRepository;
         this.teacherServices = teacherServices;
+        this.lessonServices = lessonServices;
     }
 
     @Override
@@ -77,6 +83,26 @@ public class CourseServicesImpl implements  CourseServices {
         if (course != null && teacher != null) {
             teacher.removeCourse(course);
             this.teacherServices.updateTeacher(teacher);
+        }
+    }
+
+    @Override
+    public void addLessonToCourse(Integer lessonId, Integer courseId) {
+        Lesson lesson = this.lessonServices.getLesson(lessonId);
+        Course course = this.courseRepository.findCourseByIdAndActiveTrue(courseId);
+        if(lesson != null && course != null){
+            lesson.setCourse(course);
+            this.lessonServices.updateLesson(lesson);
+        }
+    }
+
+    @Override
+    public void removeLessonFromCourse(Integer lessonId, Integer courseId) {
+        Lesson lesson = this.lessonServices.getLesson(lessonId);
+        Course course = this.courseRepository.findCourseByIdAndActiveTrue(courseId);
+        if(lesson != null && course != null){
+            lesson.setCourse(null);
+            this.lessonServices.updateLesson(lesson);
         }
     }
 }
