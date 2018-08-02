@@ -19,22 +19,22 @@ public class ModuleRestController {
 
     @GetMapping("/getById/{id}")
     public Module getModule(@PathVariable final Integer id){
-        return null;
+        return this.moduleServices.getModule(id);
     }
     @GetMapping("/getAll")
     public List<Module> getAllModules(){
-        return null;
+        return this.moduleServices.getAllModules();
     }
     @PostMapping("/create")
     public @ResponseBody Integer createModule(@RequestBody Module module){
-        return null;
+        return this.moduleServices.createModule(module);
     }
     @PutMapping("/update")
     public void updateModule(@RequestBody Module module){
-
+        this.moduleServices.updateModule(module);
     }
     @DeleteMapping("/delete/{id}")
     public void deleteModule(@PathVariable final Integer id){
-        
+        this.moduleServices.disableModule(id);
     }
 }

@@ -19,22 +19,22 @@ public class CourseRestController {
 
     @GetMapping("/getAll")
     public List<Course> getCourses(){
-        return null;
+        return this.courseServices.getAllCourses();
     }
     @GetMapping("/getById/{id}")
     public Course getCourse(@PathVariable final Integer id){
-        return null;
+        return this.courseServices.getCourse(id);
     }
     @PostMapping("/create")
     public @ResponseBody Integer createCourse(@RequestBody Course course){
-        return null;
+        return this.courseServices.createCourse(course);
     }
     @PutMapping("/update")
     public void updateCourse(@RequestBody Course course){
-
+        this.courseServices.createCourse(course);
     }
     @DeleteMapping("/delete/{id}")
     public void disableCourse(@PathVariable final Integer id){
-
+        this.courseServices.disableCourse(id);
     }
 }
