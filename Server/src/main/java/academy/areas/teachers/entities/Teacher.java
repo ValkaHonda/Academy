@@ -35,6 +35,9 @@ public class Teacher extends User {
     public void addCourse(Course course){
         this.courses.add(course);
     }
+    public void removeCourse(Course course){
+        this.courses.remove(course);
+    }
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "teachers_courses")

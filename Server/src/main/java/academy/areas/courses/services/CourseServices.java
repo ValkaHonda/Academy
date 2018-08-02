@@ -10,4 +10,6 @@ public interface CourseServices {
     Integer createCourse(Course course);
     void updateCourse(Course course);
     void disableCourse(final Integer id);
+    void assignTeacherToCourse(final Integer teacherId, final Integer courseId);
+    void removeTeacherFromCourse(final Integer teacherId, final Integer courseId);
 }

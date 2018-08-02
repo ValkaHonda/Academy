@@ -2,6 +2,7 @@ package academy.areas.admins.controllers;
 
 import academy.areas.admins.entities.Admin;
 import academy.areas.admins.services.AdminServices;
+import academy.areas.courses.services.CourseServices;
 import academy.areas.teachers.entities.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +13,12 @@ import java.util.List;
 @RequestMapping("/admins")
 public class AdminRestController {
     private AdminServices adminServices;
+    private CourseServices courseServices;
 
     @Autowired
-    public AdminRestController(final AdminServices adminServices) {
+    public AdminRestController(final AdminServices adminServices, final CourseServices courseServices) {
         this.adminServices = adminServices;
+        this.courseServices = courseServices;
     }
 
     @PostMapping("/create")
@@ -37,5 +40,15 @@ public class AdminRestController {
     @DeleteMapping("/delete/{id}")
     public void disableAdmin(@PathVariable final Integer id){
         this.adminServices.disableAdmin(id);
+    }
+    @PostMapping("/assignTeacherToCourse/{teacherId}/{courseId}")
+    public void asignTeacherToCourse(@PathVariable("teacherId") final Integer teacherId,
+                                     @PathVariable("courseId") final Integer courseId){
+        this.courseServices.assignTeacherToCourse(teacherId,courseId);
+    }
+    @PostMapping("/removeTeacherFromCourse/{teacherId}/{courseId}")
+    public void removeTeacherFromCourse(@PathVariable("teacherId") final Integer teacherId,
+    @PathVariable("courseId") final Integer courseId){
+        this.courseServices.removeTeacherFromCourse(teacherId,courseId);
     }
 }
