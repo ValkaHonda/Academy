@@ -3,6 +3,7 @@ package academy.areas.teachers.entities;
 import academy.areas.courses.entities.Course;
 import academy.areas.lessons.entities.Lesson;
 import academy.areas.users.entities.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -34,9 +35,13 @@ public class Teacher extends User {
     public void addCourse(Course course){
         this.courses.add(course);
     }
+    public void removeCourse(Course course){
+        this.courses.remove(course);
+    }
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "teachers_courses")
+    @JsonIgnoreProperties("teachers")
     public Set<Course> getCourses() {
         return courses;
     }
