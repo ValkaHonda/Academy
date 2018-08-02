@@ -1,5 +1,7 @@
 package academy.areas.modules.services;
 
+import academy.areas.courses.entities.Course;
+import academy.areas.courses.services.CourseServices;
 import academy.areas.modules.entities.Module;
 import academy.areas.modules.repositories.ModuleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +12,13 @@ import java.util.List;
 @Service
 public class ModuleServicesImpl implements ModuleServices {
     private ModuleRepository moduleRepository;
+    private CourseServices courseServices;
 
     @Autowired
-    public ModuleServicesImpl(final ModuleRepository moduleRepository) {
+    public ModuleServicesImpl(final ModuleRepository moduleRepository,
+                              final CourseServices courseServices) {
         this.moduleRepository = moduleRepository;
+        this.courseServices = courseServices;
     }
 
     @Override
@@ -52,6 +57,27 @@ public class ModuleServicesImpl implements ModuleServices {
         if (this.isInModuleRepository(module)){
             module.setActive(false);
             this.moduleRepository.saveAndFlush(module);
+        }
+    }
+
+    @Override
+    public void addCourseToModule(Integer moduleId, Integer courseId) {
+        Module module = this.getModule(moduleId);
+        Course course = this.courseServices.getCourse(courseId);
+        if (module != null && course != null){
+            course.setModule(module);
+            this.courseServices.updateCourse(course);
+
+        }
+    }
+
+    @Override
+    public void removeCourseFromModule(Integer moduleId, Integer courseId) {
+        Module module = this.getModule(moduleId);
+        Course course = this.courseServices.getCourse(courseId);
+        if (module != null && course != null) {
+            course.setModule(null);
+            this.courseServices.updateCourse(course);
         }
     }
 }

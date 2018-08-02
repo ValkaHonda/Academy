@@ -4,9 +4,11 @@ import academy.areas.admins.entities.Admin;
 import academy.areas.courses.entities.Course;
 import academy.areas.students.entities.Student;
 import academy.areas.studyingSubject.entities.StudyingSubject;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -22,6 +24,7 @@ public class Module extends StudyingSubject {
 
     public Module(String name, Date creationDate, Date lastModifiedDate, boolean isActive) {
         super(name, creationDate, lastModifiedDate, isActive);
+        this.courses = new HashSet<>();
     }
 
     @ManyToMany(mappedBy = "modules")
@@ -34,6 +37,7 @@ public class Module extends StudyingSubject {
     }
 
     @OneToMany(mappedBy = "module")
+    @JsonIgnoreProperties("modules")
     public Set<Course> getCourses() {
         return courses;
     }
@@ -49,5 +53,12 @@ public class Module extends StudyingSubject {
 
     public void setStudents(Set<Student> students) {
         this.students = students;
+    }
+
+    public void addCourse(Course course){
+        this.courses.add(course);
+    }
+    public void removeCourse(Course course){
+        this.courses.remove(course);
     }
 }

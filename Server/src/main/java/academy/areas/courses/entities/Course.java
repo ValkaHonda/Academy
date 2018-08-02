@@ -61,6 +61,7 @@ public class Course extends StudyingSubject {
 
     @ManyToOne()
     @JoinColumn(name = "moduleId")
+    @JsonIgnoreProperties("courses")
     public Module getModule() {
         return module;
     }
