@@ -19,19 +19,19 @@ public class LessonRestController {
 
     @GetMapping("/getById/{id}")
     public Lesson getLesson(@PathVariable final Integer id){
-        return null;
+        return this.lessonServices.getLesson(id);
     }
     @GetMapping("/getAll")
     public List<Lesson> getAllLessons(){
-        return null;
+        return this.lessonServices.getAllLessons();
     }
     @PostMapping("/create")
     public @ResponseBody Integer createLesson(@RequestBody Lesson lesson){
-        return null;
+        return this.lessonServices.createLesson(lesson);
     }
     @PutMapping("/update")
     public void updateLesson(@RequestBody Lesson lesson){
-        this.updateLesson(lesson);
+        this.lessonServices.updateLesson(lesson);
     }
     @DeleteMapping("/delete/{id}")
     public void disableLesson(@PathVariable final Integer id){

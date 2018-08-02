@@ -35,13 +35,23 @@ public class LessonServicesImpl implements LessonServices{
         return null;
     }
 
+    private boolean isLessonInRepository(Lesson lesson){
+        return lesson != null && this.lessonRepository.findLessonByIdAndActiveTrue(lesson.getId()) != null;
+    }
+
     @Override
     public void updateLesson(Lesson lesson) {
-
+        if (isLessonInRepository(lesson)) {
+            this.lessonRepository.saveAndFlush(lesson);
+        }
     }
 
     @Override
     public void disableLesson(Integer id) {
-
+        Lesson lesson = this.lessonRepository.findLessonByIdAndActiveTrue(id);
+        if (isLessonInRepository(lesson)){
+            lesson.setActive(false);
+            this.updateLesson(lesson);
+        }
     }
 }

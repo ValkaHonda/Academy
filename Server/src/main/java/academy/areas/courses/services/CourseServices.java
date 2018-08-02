@@ -12,4 +12,6 @@ public interface CourseServices {
     void disableCourse(final Integer id);
     void assignTeacherToCourse(final Integer teacherId, final Integer courseId);
     void removeTeacherFromCourse(final Integer teacherId, final Integer courseId);
+    void addLessonToCourse(final Integer lessonId, final Integer courseId);
+    void removeLessonFromCourse(final Integer lessonId, final Integer courseId);
 }

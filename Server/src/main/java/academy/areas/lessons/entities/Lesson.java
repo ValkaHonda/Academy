@@ -3,6 +3,7 @@ package academy.areas.lessons.entities;
 import academy.areas.courses.entities.Course;
 import academy.areas.studyingSubject.entities.StudyingSubject;
 import academy.areas.teachers.entities.Teacher;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -36,6 +37,7 @@ public class Lesson extends StudyingSubject {
 
     @ManyToOne()
     @JoinColumn(name = "courseId")
+    @JsonIgnoreProperties("lessons")
     public Course getCourse() {
         return course;
     }
