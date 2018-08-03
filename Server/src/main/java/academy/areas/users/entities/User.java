@@ -1,5 +1,7 @@
 package academy.areas.users.entities;
 
+import academy.areas.courses.entities.Course;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -17,6 +19,7 @@ public class User {
     private Date lastModifiedDate;
     private boolean isActive;
     private Set<Role> roles;
+    private Set<Course> courses;
 
     public User() { }
 
@@ -111,5 +114,15 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_course")
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
     }
 }
