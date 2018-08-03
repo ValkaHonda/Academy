@@ -1,12 +1,14 @@
 package academy.areas.courses.services;
 
 import academy.areas.courses.entities.Course;
+import academy.areas.courses.model.CourseMV;
 import academy.areas.courses.repositories.CourseRepository;
 import academy.areas.lessons.entities.Lesson;
 import academy.areas.lessons.services.LessonServices;
 import academy.areas.teachers.entities.Teacher;
 import academy.areas.teachers.repositories.TeacherRepository;
 import academy.areas.teachers.services.TeacherServices;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,8 +35,11 @@ public class CourseServicesImpl implements  CourseServices {
     }
 
     @Override
-    public Course getCourse(final Integer id) {
-        return this.courseRepository.findCourseByIdAndActiveTrue(id);
+    public CourseMV getCourse(final Integer id) {
+        Course course = this.courseRepository.findCourseByIdAndActiveTrue(id);
+        ModelMapper modelMapper = new ModelMapper();
+        CourseMV courseMV = modelMapper.map(course,CourseMV.class);
+        return courseMV;
     }
 
     @Override
@@ -68,8 +73,8 @@ public class CourseServicesImpl implements  CourseServices {
 
     @Override
     public void assignTeacherToCourse(Integer teacherId, Integer courseId) {
-        Course course = this.getCourse(courseId);
-        Teacher teacher = this.teacherServices.getTeacherById(teacherId);
+        Course course = null; //this.getCourse(courseId);
+        Teacher teacher = null; // this.teacherServices.getTeacherById(teacherId);
         if (course != null && teacher != null) {
             teacher.addCourse(course);
             this.teacherServices.updateTeacher(teacher);
@@ -78,8 +83,8 @@ public class CourseServicesImpl implements  CourseServices {
 
     @Override
     public void removeTeacherFromCourse(Integer teacherId, Integer courseId) {
-        Course course = this.getCourse(courseId);
-        Teacher teacher = this.teacherServices.getTeacherById(teacherId);
+        Course course = null; //this.getCourse(courseId);
+        Teacher teacher = null; //this.teacherServices.getTeacherById(teacherId);
         if (course != null && teacher != null) {
             teacher.removeCourse(course);
             this.teacherServices.updateTeacher(teacher);

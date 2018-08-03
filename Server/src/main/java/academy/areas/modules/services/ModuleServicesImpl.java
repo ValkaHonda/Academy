@@ -63,7 +63,7 @@ public class ModuleServicesImpl implements ModuleServices {
     @Override
     public void addCourseToModule(Integer moduleId, Integer courseId) {
         Module module = this.getModule(moduleId);
-        Course course = this.courseServices.getCourse(courseId);
+        Course course = null; //this.courseServices.getCourse(courseId);
         if (module != null && course != null){
             course.setModule(module);
             this.courseServices.updateCourse(course);
@@ -74,7 +74,7 @@ public class ModuleServicesImpl implements ModuleServices {
     @Override
     public void removeCourseFromModule(Integer moduleId, Integer courseId) {
         Module module = this.getModule(moduleId);
-        Course course = this.courseServices.getCourse(courseId);
+        Course course = null; // this.courseServices.getCourse(courseId);
         if (module != null && course != null) {
             course.setModule(null);
             this.courseServices.updateCourse(course);

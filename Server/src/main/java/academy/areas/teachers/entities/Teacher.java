@@ -40,7 +40,6 @@ public class Teacher extends User {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "teachers_courses")
-    @JsonIgnoreProperties("teachers")
     public Set<Course> getCourses() {
         return courses;
     }

@@ -9,14 +9,6 @@ public abstract class StudyingSubjectMV {
     private Date lastModifiedDate;
     private boolean isActive;
 
-    public StudyingSubjectMV(Integer id, String name, Date creationDate, Date lastModifiedDate, boolean isActive) {
-        this.id = id;
-        this.name = name;
-        this.creationDate = creationDate;
-        this.lastModifiedDate = lastModifiedDate;
-        this.isActive = isActive;
-    }
-
     public StudyingSubjectMV() { }
 
     public Integer getId() {

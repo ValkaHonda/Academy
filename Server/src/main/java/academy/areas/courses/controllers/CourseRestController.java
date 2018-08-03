@@ -1,6 +1,7 @@
 package academy.areas.courses.controllers;
 
 import academy.areas.courses.entities.Course;
+import academy.areas.courses.model.CourseMV;
 import academy.areas.courses.services.CourseServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class CourseRestController {
         return this.courseServices.getAllCourses();
     }
     @GetMapping("/getById/{id}")
-    public Course getCourse(@PathVariable final Integer id){
+    public CourseMV getCourse(@PathVariable final Integer id){
         return this.courseServices.getCourse(id);
     }
     @PostMapping("/create")

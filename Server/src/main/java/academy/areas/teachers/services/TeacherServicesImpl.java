@@ -4,7 +4,9 @@ import academy.areas.courses.entities.Course;
 import academy.areas.courses.repositories.CourseRepository;
 import academy.areas.students.entities.Student;
 import academy.areas.teachers.entities.Teacher;
+import academy.areas.teachers.model.TeacherMV;
 import academy.areas.teachers.repositories.TeacherRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,16 +34,23 @@ public class TeacherServicesImpl implements TeacherServices {
 
     @Override
     public List<Teacher> getAllTeachers() {
-        System.out.println("could be a bug");
-//        Not ready for abstractRepository!!!!!!!!!!!!!
-//        System.out.println(this.abstractRepository.findAllByActiveTrue());
-        System.out.println("No?");
         return this.teacherRepository.findAllByActiveTrue();
     }
 
     @Override
-    public Teacher getTeacherById(Integer id) {
-        return this.teacherRepository.findTeacherByIdAndActiveTrue(id);
+    public TeacherMV getTeacherById(Integer id) {
+        Teacher teacher = this.teacherRepository.findTeacherByIdAndActiveTrue(id);
+
+
+        ModelMapper modelMapper = new ModelMapper();
+
+        TeacherMV teacherMV = modelMapper.map(teacher,TeacherMV.class);
+
+
+
+
+
+        return teacherMV;
     }
 
     @Override

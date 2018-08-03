@@ -30,7 +30,6 @@ public class Course extends StudyingSubject {
     public Course() { }
 
     @ManyToMany(mappedBy = "courses")
-    @JsonIgnoreProperties("courses")
     public Set<Teacher> getTeachers() {
         return teachers;
     }
