@@ -1,8 +1,8 @@
-package academy.areas.modules.models.viewModels;
+package academy.areas.modules.models.bidingModel;
 
 import java.util.Date;
 
-public class ModuleViewModel {
+public class ModuleBindingModel {
     private Integer id;
     private String name;
     private Date creationDate;

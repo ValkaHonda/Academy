@@ -1,6 +1,7 @@
 package academy.areas.modules.services;
 
 import academy.areas.modules.entities.Module;
+import academy.areas.modules.models.bidingModel.ModuleBindingModel;
 import academy.areas.modules.models.viewModels.ModuleViewModel;
 import academy.areas.modules.repositories.ModuleRepository;
 import org.modelmapper.ModelMapper;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -32,8 +34,12 @@ public class ModuleServicesImpl implements ModuleServices{
     }
 
     @Override
-    public ModuleViewModel createModule(Module module) {
-        if (module != null){
+    public ModuleViewModel createModule(ModuleBindingModel moduleBindingModel) {
+        if (moduleBindingModel != null){
+            Module module = this.modelMapper.map(moduleBindingModel,Module.class);
+            module.setActive(true);
+            module.setCreationDate(new Date());
+            module.setLastModifiedDate(new Date());
             this.moduleRepository.saveAndFlush(module);
             return this.convertModuleToViewModel(module);
         }
@@ -41,10 +47,15 @@ public class ModuleServicesImpl implements ModuleServices{
     }
 
     @Override
-    public void updateModule(Module module) {
-        if (this.moduleRepository.exists(module.getId())){
+    public ModuleViewModel updateModule(ModuleBindingModel moduleBindingModel) {
+        if (this.moduleRepository.exists(moduleBindingModel.getId())){
+            Module module = this.modelMapper.map(moduleBindingModel,Module.class);
+            module.setCreationDate(new Date());
+            module.setLastModifiedDate(new Date());
             this.moduleRepository.saveAndFlush(module);
+            return this.convertModuleToViewModel(module);
         }
+        return null;
     }
 
     private ModuleViewModel convertModuleToViewModel(Module module) {
