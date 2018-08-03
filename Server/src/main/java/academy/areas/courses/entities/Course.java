@@ -2,54 +2,74 @@ package academy.areas.courses.entities;
 
 import academy.areas.lessons.entities.Lesson;
 import academy.areas.modules.entities.Module;
-import academy.areas.studyingSubject.entities.StudyingSubject;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "courses")
-@PrimaryKeyJoinColumn(referencedColumnName="id")
-public class Course extends StudyingSubject {
+public class Course {
     private Integer id;
     private String name;
     private Date creationDate;
     private Date lastModifiedDate;
     private boolean isActive;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private Module module;
     private Set<Lesson> lessons;
 
 
-    public Course(String name, Date creationDate, Date lastModifiedDate, boolean isActive) {
-        super(name, creationDate, lastModifiedDate, isActive);
+    public Course() { }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
+        return id;
     }
 
-    public Course() { }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Column(name="created_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    @Column(name="last_modified_at")
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    @Column(name = "active")
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
     @ManyToOne()
     @JoinColumn(name = "moduleId")
-    @JsonIgnoreProperties("courses")
     public Module getModule() {
         return module;
     }
@@ -59,7 +79,6 @@ public class Course extends StudyingSubject {
     }
 
     @OneToMany(mappedBy = "course")
-    @JsonIgnoreProperties("courses")
     public Set<Lesson> getLessons() {
         return lessons;
     }
