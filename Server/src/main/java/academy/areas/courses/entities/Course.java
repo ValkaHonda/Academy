@@ -2,6 +2,7 @@ package academy.areas.courses.entities;
 
 import academy.areas.lessons.entities.Lesson;
 import academy.areas.modules.entities.Module;
+import academy.areas.users.entities.User;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -17,8 +18,8 @@ public class Course {
     private boolean isActive;
     private Module module;
     private Set<Lesson> lessons;
-
-
+    private Set<User> users;
+    
     public Course() { }
 
     @Id
@@ -85,5 +86,15 @@ public class Course {
 
     public void setLessons(Set<Lesson> lessons) {
         this.lessons = lessons;
+    }
+
+
+    @ManyToMany(mappedBy = "courses")
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }
