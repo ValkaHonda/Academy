@@ -11,6 +11,24 @@ import java.util.Date;
 @Table(name = "lessons")
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Lesson extends StudyingSubject {
+    private Integer id;
+    private String name;
+    private Date creationDate;
+    private Date lastModifiedDate;
+    private boolean isActive;
+
+
+
+
+
+
+
+
+
+
+
+
+
     private Course course;
     private Date lessonDate;
     private byte[] presentation;

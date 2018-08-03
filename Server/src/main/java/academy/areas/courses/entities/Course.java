@@ -14,6 +14,27 @@ import java.util.Set;
 @Table(name = "courses")
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Course extends StudyingSubject {
+    private Integer id;
+    private String name;
+    private Date creationDate;
+    private Date lastModifiedDate;
+    private boolean isActive;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private Module module;
     private Set<Lesson> lessons;

@@ -13,6 +13,11 @@ import java.util.Set;
 @Table(name = "modules")
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class Module extends StudyingSubject {
+    private Integer id;
+    private String name;
+    private Date creationDate;
+    private Date lastModifiedDate;
+    private boolean isActive;
     private Set<Course> courses;
 
     public Module() {
