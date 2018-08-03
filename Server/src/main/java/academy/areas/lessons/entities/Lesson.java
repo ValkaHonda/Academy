@@ -2,12 +2,10 @@ package academy.areas.lessons.entities;
 
 import academy.areas.courses.entities.Course;
 import academy.areas.studyingSubject.entities.StudyingSubject;
-import academy.areas.teachers.entities.Teacher;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Table(name = "lessons")

@@ -5,7 +5,7 @@ import java.util.Date;
 @Entity
 @Table(name = "users")
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class User {
+public class User {
     private Integer id;
     private String userName;
     private String firstName;
@@ -15,6 +15,14 @@ public abstract class User {
     private Date createDate;
     private Date lastModifiedDate;
     private boolean isActive;
+
+
+
+
+
+
+
+
 
     public User(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate, boolean isActive) {
         this.userName = userName;
