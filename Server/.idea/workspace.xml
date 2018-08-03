@@ -129,7 +129,6 @@
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/users/repositories/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/users/services/UserServiceIml.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/users/services/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/academy/areas/users/entities/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/students/repositories/StudentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/admins/repositories/AdminRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/admins/services/AdminServices.java" />
@@ -160,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/controllers/LessonRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/services/LessonServicesImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/teachers/controllers/TeacherRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/academy/areas/users/entities/User.java" />
       </list>
     </option>
   </component>
@@ -995,12 +995,12 @@
       <workItem from="1533025053840" duration="19000" />
       <workItem from="1533025610393" duration="21405000" />
       <workItem from="1533194486769" duration="12326000" />
-      <workItem from="1533285996104" duration="125000" />
+      <workItem from="1533285996104" duration="404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202150000" />
+    <option name="totallyTimeSpent" value="202429000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
