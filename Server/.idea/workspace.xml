@@ -25,50 +25,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CourseRestController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/courses/controllers/CourseRestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LessonRestController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/controllers/LessonRestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModuleRestController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ModuleRestController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/controllers/ModuleRestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="208">
+              <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#288#303#0" expanded="false" />
+                <element signature="e#489#490#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRestController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/users/controllers/UserRestController.java">
+      <file leaf-file-name="ModuleRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/repositories/ModuleRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            <state relative-caret-position="84">
+              <caret line="7" column="73" lean-forward="false" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModuleServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModuleServicesImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServicesImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#ModuleServicesImpl#0;class#ModuleServicesImpl#0" expanded="false" />
+                <element signature="method#getAllModules#0;class#ModuleServicesImpl#0" expanded="false" />
+                <element signature="method#getModuleById#0;class#ModuleServicesImpl#0" expanded="false" />
+                <element signature="method#createModule#0;class#ModuleServicesImpl#0" expanded="false" />
+                <element signature="method#updateModule#0;class#ModuleServicesImpl#0" expanded="false" />
+                <element signature="method#convertModuleToViewModel#0;class#ModuleServicesImpl#0" expanded="false" />
+                <element signature="method#convertModulesListToViewModelsList#0;class#ModuleServicesImpl#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeanConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/academy/config/BeanConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,9 +140,7 @@
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/users/repositories/AbstractRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/teachers/services/TeacherServicesImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/teachers/entities/Teacher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/admins/controllers/AdminRestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServicesImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/entities/Module.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/courses/entities/Course.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java" />
@@ -150,8 +162,10 @@
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/models/viewModels/ModuleViewModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/courses/controllers/CourseRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/controllers/LessonRestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/controllers/ModuleRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/users/controllers/UserRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServicesImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/controllers/ModuleRestController.java" />
       </list>
     </option>
   </component>
@@ -328,6 +342,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="academy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="areas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1017,12 +1069,12 @@
       <workItem from="1533025053840" duration="19000" />
       <workItem from="1533025610393" duration="21405000" />
       <workItem from="1533194486769" duration="12326000" />
-      <workItem from="1533285996104" duration="3025000" />
+      <workItem from="1533285996104" duration="4734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205050000" />
+    <option name="totallyTimeSpent" value="206759000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1128,13 +1180,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/BlogApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/blog/BlogApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -1165,17 +1210,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/teachers/repositories/TeacherRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/teachers/services/TeacherServicesImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/teachers/services/TeacherServices.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/teachers/entities/Teacher.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/admins/controllers/AdminRestController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServicesImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/courses/services/CourseServicesImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/admins/entities/Admin.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/admins/repositories/AdminRepository.java" />
@@ -1229,14 +1265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/repositories/ModuleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="73" lean-forward="false" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
           <folding />
         </state>
       </provider>
@@ -1373,22 +1401,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/controllers/ModuleRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/users/controllers/UserRestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/config/BeanConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServicesImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+          <folding>
+            <element signature="method#ModuleServicesImpl#0;class#ModuleServicesImpl#0" expanded="false" />
+            <element signature="method#getAllModules#0;class#ModuleServicesImpl#0" expanded="false" />
+            <element signature="method#getModuleById#0;class#ModuleServicesImpl#0" expanded="false" />
+            <element signature="method#createModule#0;class#ModuleServicesImpl#0" expanded="false" />
+            <element signature="method#updateModule#0;class#ModuleServicesImpl#0" expanded="false" />
+            <element signature="method#convertModuleToViewModel#0;class#ModuleServicesImpl#0" expanded="false" />
+            <element signature="method#convertModulesListToViewModelsList#0;class#ModuleServicesImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/services/ModuleServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/repositories/ModuleRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="73" lean-forward="false" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/modules/controllers/ModuleRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding>
+            <element signature="e#288#303#0" expanded="false" />
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,62 @@
+package academy.areas.modules.services;
+
+import academy.areas.modules.entities.Module;
+import academy.areas.modules.models.viewModels.ModuleViewModel;
+import academy.areas.modules.repositories.ModuleRepository;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class ModuleServicesImpl implements ModuleServices{
+    private ModuleRepository moduleRepository;
+    private ModelMapper modelMapper;
+
+    @Autowired
+    public ModuleServicesImpl(ModuleRepository moduleRepository, ModelMapper modelMapper) {
+        this.moduleRepository = moduleRepository;
+        this.modelMapper = modelMapper;
+    }
+
+    @Override
+    public List<ModuleViewModel> getAllModules() {
+        return this.convertModulesListToViewModelsList(this.moduleRepository.findAll());
+    }
+
+    @Override
+    public ModuleViewModel getModuleById(Integer id) {
+        return this.convertModuleToViewModel(this.moduleRepository.findOne(id));
+    }
+
+    @Override
+    public ModuleViewModel createModule(Module module) {
+        if (module != null){
+            this.moduleRepository.saveAndFlush(module);
+            return this.convertModuleToViewModel(module);
+        }
+        return null;
+    }
+
+    @Override
+    public void updateModule(Module module) {
+        if (this.moduleRepository.exists(module.getId())){
+            this.moduleRepository.saveAndFlush(module);
+        }
+    }
+
+    private ModuleViewModel convertModuleToViewModel(Module module) {
+        return this.modelMapper.map(module,ModuleViewModel.class);
+    }
+
+    private List<ModuleViewModel> convertModulesListToViewModelsList(List<Module> modules) {
+        List<ModuleViewModel> moduleViewModels = new ArrayList<>();
+        for (Module module : modules) {
+            ModuleViewModel currentModel = this.convertModuleToViewModel(module);
+            moduleViewModels.add(currentModel);
+        }
+        return moduleViewModels;
+    }
+}
