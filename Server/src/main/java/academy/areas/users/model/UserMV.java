@@ -8,10 +8,8 @@ public abstract class UserMV {
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
     private Date createDate;
     private Date lastModifiedDate;
-    private boolean isActive;
 
     public UserMV() { }
 
@@ -55,14 +53,6 @@ public abstract class UserMV {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public Date getCreateDate() {
         return createDate;
     }
@@ -77,13 +67,5 @@ public abstract class UserMV {
 
     public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
     }
 }
