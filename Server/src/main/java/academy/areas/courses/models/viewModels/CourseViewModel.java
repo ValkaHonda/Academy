@@ -1,15 +1,24 @@
-package academy.areas.studyingSubject.model;
+package academy.areas.courses.models.viewModels;
+
+import academy.areas.lessons.entities.Lesson;
+import academy.areas.modules.entities.Module;
+import academy.areas.users.entities.User;
 
 import java.util.Date;
+import java.util.Set;
 
-public abstract class StudyingSubjectMV {
+public class CourseViewModel {
     private Integer id;
     private String name;
     private Date creationDate;
     private Date lastModifiedDate;
     private boolean isActive;
+    private Module module;
+    private Set<Lesson> lessons;
+    private Set<User> users;
 
-    public StudyingSubjectMV() { }
+    public CourseViewModel() {
+    }
 
     public Integer getId() {
         return id;
@@ -49,5 +58,29 @@ public abstract class StudyingSubjectMV {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public Module getModule() {
+        return module;
+    }
+
+    public void setModule(Module module) {
+        this.module = module;
+    }
+
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(Set<Lesson> lessons) {
+        this.lessons = lessons;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

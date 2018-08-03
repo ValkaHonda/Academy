@@ -1,8 +1,8 @@
-package academy.areas.users.model;
+package academy.areas.users.models.viewModels;
 
 import java.util.Date;
 
-public abstract class UserMV {
+public  class UserViewModel {
     private Integer id;
     private String userName;
     private String firstName;
@@ -11,7 +11,8 @@ public abstract class UserMV {
     private Date createDate;
     private Date lastModifiedDate;
 
-    public UserMV() { }
+    public UserViewModel() {
+    }
 
     public Integer getId() {
         return id;
