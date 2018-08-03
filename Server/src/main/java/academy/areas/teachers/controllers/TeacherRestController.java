@@ -2,7 +2,7 @@ package academy.areas.teachers.controllers;
 
 import academy.areas.courses.services.CourseServices;
 import academy.areas.teachers.entities.Teacher;
-import academy.areas.teachers.model.TeacherMV;
+
 import academy.areas.teachers.services.TeacherServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,10 +29,12 @@ public class TeacherRestController {
     public List<Teacher> getAll(){
         return this.teacherServices.getAllTeachers();
     }
+    /*
     @GetMapping("/getById/{id}")
     public TeacherMV getTeacher(@PathVariable final Integer id){
         return this.teacherServices.getTeacherById(id);
     }
+    */
     @PutMapping("/update")
     public void updateTeacher(@RequestBody Teacher teacher){
         this.teacherServices.updateTeacher(teacher);

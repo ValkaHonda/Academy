@@ -4,7 +4,7 @@ import academy.areas.courses.entities.Course;
 import academy.areas.courses.repositories.CourseRepository;
 import academy.areas.students.entities.Student;
 import academy.areas.teachers.entities.Teacher;
-import academy.areas.teachers.model.TeacherMV;
+
 import academy.areas.teachers.repositories.TeacherRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class TeacherServicesImpl implements TeacherServices {
     public List<Teacher> getAllTeachers() {
         return this.teacherRepository.findAllByActiveTrue();
     }
-
+/*
     @Override
     public TeacherMV getTeacherById(Integer id) {
         Teacher teacher = this.teacherRepository.findTeacherByIdAndActiveTrue(id);
@@ -52,6 +52,7 @@ public class TeacherServicesImpl implements TeacherServices {
 
         return teacherMV;
     }
+    */
 
     @Override
     public void disableTeacher(Integer id) {

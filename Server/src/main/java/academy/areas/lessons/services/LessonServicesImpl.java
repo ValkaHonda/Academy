@@ -1,7 +1,9 @@
 package academy.areas.lessons.services;
 
 import academy.areas.lessons.entities.Lesson;
+import academy.areas.lessons.models.viewModels.LessonViewModel;
 import academy.areas.lessons.repositories.LessonRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +12,12 @@ import java.util.List;
 @Service
 public class LessonServicesImpl implements LessonServices{
     private LessonRepository lessonRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public LessonServicesImpl(final LessonRepository lessonRepository) {
+    public LessonServicesImpl(final LessonRepository lessonRepository, ModelMapper modelMapper) {
         this.lessonRepository = lessonRepository;
+        this.modelMapper = modelMapper;
     }
 
     @Override
@@ -53,5 +57,15 @@ public class LessonServicesImpl implements LessonServices{
             lesson.setActive(false);
             this.updateLesson(lesson);
         }
+    }
+
+    @Override
+    public LessonViewModel getLessonById(Integer id) throws Exception {
+        if (!this.lessonRepository.exists(id)){
+            throw new Exception("Invalid user!");
+        }
+        Lesson lesson = this.lessonRepository.findOne(id);
+        LessonViewModel lessonViewModel = this.modelMapper.map(lesson, LessonViewModel.class);
+        return lessonViewModel;
     }
 }

@@ -1,7 +1,7 @@
 package academy.areas.courses.services;
 
 import academy.areas.courses.entities.Course;
-import academy.areas.courses.model.CourseMV;
+//import academy.areas.courses.model.CourseMV;
 import academy.areas.courses.repositories.CourseRepository;
 import academy.areas.lessons.entities.Lesson;
 import academy.areas.lessons.services.LessonServices;
@@ -33,7 +33,7 @@ public class CourseServicesImpl implements  CourseServices {
     public List<Course> getAllCourses() {
         return this.courseRepository.findAllByActiveTrue();
     }
-
+/*
     @Override
     public CourseMV getCourse(final Integer id) {
         Course course = this.courseRepository.findCourseByIdAndActiveTrue(id);
@@ -41,7 +41,7 @@ public class CourseServicesImpl implements  CourseServices {
         CourseMV courseMV = modelMapper.map(course,CourseMV.class);
         return courseMV;
     }
-
+*/
     @Override
     public Integer createCourse(Course course) {
         if (course != null){
