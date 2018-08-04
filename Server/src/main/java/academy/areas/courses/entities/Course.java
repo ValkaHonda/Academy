@@ -1,66 +1,76 @@
 package academy.areas.courses.entities;
 
-import academy.areas.admins.entities.Admin;
 import academy.areas.lessons.entities.Lesson;
 import academy.areas.modules.entities.Module;
-import academy.areas.students.entities.Student;
-import academy.areas.studyingSubject.entities.StudyingSubject;
-import academy.areas.teachers.entities.Teacher;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import academy.areas.users.entities.User;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "courses")
-@PrimaryKeyJoinColumn(referencedColumnName="id")
-public class Course extends StudyingSubject {
-    private Set<Teacher> teachers;
-    private Set<Admin> admins;
+public class Course {
+    private Integer id;
+    private String name;
+    private Date creationDate;
+    private Date lastModifiedDate;
+    private boolean isActive;
     private Module module;
     private Set<Lesson> lessons;
-    private Set<Student> students;
-
-    public Course(String name, Date creationDate, Date lastModifiedDate, boolean isActive) {
-        super(name, creationDate, lastModifiedDate, isActive);
-        this.teachers = new HashSet<>();
-    }
-
+    private Set<User> users;
+    
     public Course() { }
 
-    @ManyToMany(mappedBy = "courses")
-    @JsonIgnoreProperties("courses")
-    public Set<Teacher> getTeachers() {
-        return teachers;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
+        return id;
     }
 
-    public void setTeachers(Set<Teacher> teachers) {
-        this.teachers = teachers;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    @ManyToMany(mappedBy = "courses")
-    public Set<Student> getStudents() {
-        return students;
+    @Column(name = "name")
+    public String getName() {
+        return name;
     }
 
-    public void setStudents(Set<Student> students) {
-        this.students = students;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @ManyToMany(mappedBy = "courses")
-    public Set<Admin> getAdmins() {
-        return admins;
+    @Column(name="created_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getCreationDate() {
+        return creationDate;
     }
 
-    public void setAdmins(Set<Admin> admins) {
-        this.admins = admins;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    @Column(name="last_modified_at")
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    @Column(name = "active")
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     @ManyToOne()
     @JoinColumn(name = "moduleId")
-    @JsonIgnoreProperties("courses")
     public Module getModule() {
         return module;
     }
@@ -70,7 +80,6 @@ public class Course extends StudyingSubject {
     }
 
     @OneToMany(mappedBy = "course")
-    @JsonIgnoreProperties("courses")
     public Set<Lesson> getLessons() {
         return lessons;
     }
@@ -79,8 +88,13 @@ public class Course extends StudyingSubject {
         this.lessons = lessons;
     }
 
-    @Transient
-    public void asignTeacher(Teacher teacher){
-        this.teachers.add(teacher);
+
+    @ManyToMany(mappedBy = "courses")
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

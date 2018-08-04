@@ -1,64 +1,67 @@
 package academy.areas.modules.entities;
 
-import academy.areas.admins.entities.Admin;
 import academy.areas.courses.entities.Course;
-import academy.areas.students.entities.Student;
-import academy.areas.studyingSubject.entities.StudyingSubject;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "modules")
-@PrimaryKeyJoinColumn(referencedColumnName="id")
-public class Module extends StudyingSubject {
-    private Set<Admin> admins;
-    private Set<Course> courses;
-    private Set<Student> students;
+public class Module {
+    private Integer id;
+    private String name;
+    private Date creationDate;
+    private Date lastModifiedDate;
+    private boolean isActive;
 
     public Module() {
     }
 
-    public Module(String name, Date creationDate, Date lastModifiedDate, boolean isActive) {
-        super(name, creationDate, lastModifiedDate, isActive);
-        this.courses = new HashSet<>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
+        return id;
     }
 
-    @ManyToMany(mappedBy = "modules")
-    public Set<Admin> getAdmins() {
-        return admins;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setAdmins(Set<Admin> admins) {
-        this.admins = admins;
+    @Column(name = "name")
+    public String getName() {
+        return name;
     }
 
-    @OneToMany(mappedBy = "module")
-    @JsonIgnoreProperties("modules")
-    public Set<Course> getCourses() {
-        return courses;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCourses(Set<Course> courses) {
-        this.courses = courses;
+    @Column(name="created_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getCreationDate() {
+        return creationDate;
     }
 
-    @OneToMany(mappedBy = "module")
-    public Set<Student> getStudents() {
-        return students;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
-    public void setStudents(Set<Student> students) {
-        this.students = students;
+    @Column(name="last_modified_at")
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
     }
 
-    public void addCourse(Course course){
-        this.courses.add(course);
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
     }
-    public void removeCourse(Course course){
-        this.courses.remove(course);
+
+    @Column(name = "active")
+    public boolean isActive() {
+        return isActive;
     }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
 }

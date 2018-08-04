@@ -1,38 +1,72 @@
 package academy.areas.lessons.entities;
 
 import academy.areas.courses.entities.Course;
-import academy.areas.studyingSubject.entities.StudyingSubject;
-import academy.areas.teachers.entities.Teacher;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Table(name = "lessons")
-@PrimaryKeyJoinColumn(referencedColumnName="id")
-public class Lesson extends StudyingSubject {
-    private Set<Teacher> teachers;
+public class Lesson {
+    private Integer id;
+    private String name;
+    private Date creationDate;
+    private Date lastModifiedDate;
+    private boolean isActive;
     private Course course;
     private Date lessonDate;
     private byte[] presentation;
     private byte[] homework;
     private String videoURL;
 
-    public Lesson(String name, Date creationDate, Date lastModifiedDate, boolean isActive) {
-        super(name, creationDate, lastModifiedDate, isActive);
-    }
-
     public Lesson() { }
 
-    @ManyToMany(mappedBy = "lessons")
-    public Set<Teacher> getTeachers() {
-        return teachers;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
+        return id;
     }
 
-    public void setTeachers(Set<Teacher> teachers) {
-        this.teachers = teachers;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Column(name="created_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    @Column(name="last_modified_at")
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    @Column(name = "active")
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     @ManyToOne()

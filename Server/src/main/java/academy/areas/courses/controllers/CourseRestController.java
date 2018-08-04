@@ -1,40 +1,48 @@
 package academy.areas.courses.controllers;
 
-import academy.areas.courses.entities.Course;
+import academy.areas.courses.models.bindingModel.CourseBindingModel;
+import academy.areas.courses.models.viewModels.CourseViewModel;
 import academy.areas.courses.services.CourseServices;
+import academy.areas.modules.entities.Module;
+import academy.areas.modules.services.ModuleServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/courses")
+@RequestMapping("/course")
 public class CourseRestController {
     private CourseServices courseServices;
+    private ModuleServices moduleServices;
 
     @Autowired
     public CourseRestController(final CourseServices courseServices) {
         this.courseServices = courseServices;
     }
 
+
+
+    @GetMapping("/getById/{id}")
+    public CourseViewModel getCourseById(@PathVariable final Integer id){
+        return this.courseServices.getCourseById(id);
+    }
     @GetMapping("/getAll")
-    public List<Course> getCourses(){
+    public List<CourseViewModel> getCourses(){
         return this.courseServices.getAllCourses();
     }
-    @GetMapping("/getById/{id}")
-    public Course getCourse(@PathVariable final Integer id){
-        return this.courseServices.getCourse(id);
-    }
-    @PostMapping("/create")
-    public @ResponseBody Integer createCourse(@RequestBody Course course){
-        return this.courseServices.createCourse(course);
+    @PostMapping("/create/{moduleId}")
+    public @ResponseBody  CourseViewModel createModule(@RequestBody final CourseBindingModel courseBindingModel,
+                                                       @PathVariable final Integer moduleId){
+        Module module = this.moduleServices.getModuleEntityById(moduleId);
+        if (this.moduleServices.exists(moduleId)){
+            return this.courseServices.createCourse(courseBindingModel,module);
+
+        }
+        return null;
     }
     @PutMapping("/update")
-    public void updateCourse(@RequestBody Course course){
-        this.courseServices.createCourse(course);
-    }
-    @DeleteMapping("/delete/{id}")
-    public void disableCourse(@PathVariable final Integer id){
-        this.courseServices.disableCourse(id);
+    public @ResponseBody CourseViewModel updateCourse(@RequestBody CourseBindingModel courseBindingModel){
+        return this.courseServices.updateCourse(courseBindingModel);
     }
 }

@@ -1,11 +1,14 @@
 package academy.areas.users.entities;
 
+import academy.areas.courses.entities.Course;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
+
 @Entity
 @Table(name = "users")
-@Inheritance(strategy = InheritanceType.JOINED)
-public abstract class User {
+public class User {
     private Integer id;
     private String userName;
     private String firstName;
@@ -15,17 +18,9 @@ public abstract class User {
     private Date createDate;
     private Date lastModifiedDate;
     private boolean isActive;
+    private Set<Role> roles;
+    private Set<Course> courses;
 
-    public User(String userName, String firstName, String lastName, String email, String password, Date createDate, Date lastModifiedDate, boolean isActive) {
-        this.userName = userName;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.createDate = createDate;
-        this.lastModifiedDate = lastModifiedDate;
-        this.isActive = isActive;
-    }
     public User() { }
 
     @Id
@@ -109,5 +104,25 @@ public abstract class User {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_role")
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_course")
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
     }
 }

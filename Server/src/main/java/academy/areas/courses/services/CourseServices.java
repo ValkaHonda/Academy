@@ -1,17 +1,16 @@
 package academy.areas.courses.services;
 
 import academy.areas.courses.entities.Course;
+import academy.areas.courses.models.bindingModel.CourseBindingModel;
+import academy.areas.courses.models.viewModels.CourseViewModel;
+import academy.areas.modules.entities.Module;
+
 
 import java.util.List;
 
 public interface CourseServices {
-    List<Course> getAllCourses();
-    Course getCourse(final Integer id);
-    Integer createCourse(Course course);
-    void updateCourse(Course course);
-    void disableCourse(final Integer id);
-    void assignTeacherToCourse(final Integer teacherId, final Integer courseId);
-    void removeTeacherFromCourse(final Integer teacherId, final Integer courseId);
-    void addLessonToCourse(final Integer lessonId, final Integer courseId);
-    void removeLessonFromCourse(final Integer lessonId, final Integer courseId);
+    List<CourseViewModel> getAllCourses();
+    CourseViewModel getCourseById(final Integer id);
+    CourseViewModel createCourse(final CourseBindingModel courseBindingModel, Module module);
+    CourseViewModel updateCourse(final CourseBindingModel courseBindingModel);
 }

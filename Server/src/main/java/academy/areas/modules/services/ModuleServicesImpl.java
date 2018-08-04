@@ -1,83 +1,83 @@
 package academy.areas.modules.services;
 
-import academy.areas.courses.entities.Course;
-import academy.areas.courses.services.CourseServices;
 import academy.areas.modules.entities.Module;
+import academy.areas.modules.models.bidingModel.ModuleBindingModel;
+import academy.areas.modules.models.viewModels.ModuleViewModel;
 import academy.areas.modules.repositories.ModuleRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
-public class ModuleServicesImpl implements ModuleServices {
+public class ModuleServicesImpl implements ModuleServices{
     private ModuleRepository moduleRepository;
-    private CourseServices courseServices;
+    private ModelMapper modelMapper;
 
     @Autowired
-    public ModuleServicesImpl(final ModuleRepository moduleRepository,
-                              final CourseServices courseServices) {
+    public ModuleServicesImpl(ModuleRepository moduleRepository, ModelMapper modelMapper) {
         this.moduleRepository = moduleRepository;
-        this.courseServices = courseServices;
+        this.modelMapper = modelMapper;
     }
 
     @Override
-    public List<Module> getAllModules() {
-        return this.moduleRepository.findAllByActiveTrue();
+    public List<ModuleViewModel> getAllModules() {
+        return this.convertModulesListToViewModelsList(this.moduleRepository.findAll());
     }
 
     @Override
-    public Module getModule(Integer id) {
-        return this.moduleRepository.findModuleByIdAndActiveTrue(id);
-    }
-    private boolean isInModuleRepository(Module module){
-        return module != null && this.moduleRepository
-                .findModuleByIdAndActiveTrue(module.getId()) != null;
+    public ModuleViewModel getModuleById(final Integer id) {
+        return this.convertModuleToViewModel(this.moduleRepository.findOne(id));
     }
 
     @Override
-    public Integer createModule(Module module) {
-        if (module != null){
+    public Module getModuleEntityById(Integer id) {
+        return this.moduleRepository.findOne(id);
+    }
+
+    @Override
+    public ModuleViewModel createModule(final ModuleBindingModel moduleBindingModel) {
+        if (moduleBindingModel != null){
+            Module module = this.modelMapper.map(moduleBindingModel,Module.class);
+            module.setActive(true);
+            module.setCreationDate(new Date());
+            module.setLastModifiedDate(new Date());
             this.moduleRepository.saveAndFlush(module);
-            return module.getId();
+            return this.convertModuleToViewModel(module);
         }
         return null;
     }
 
     @Override
-    public void updateModule(Module module) {
-        if (isInModuleRepository(module)){
+    public ModuleViewModel updateModule(final ModuleBindingModel moduleBindingModel) {
+        if (this.moduleRepository.exists(moduleBindingModel.getId())){
+            Module module = this.modelMapper.map(moduleBindingModel,Module.class);
+            module.setCreationDate(new Date());
+            module.setLastModifiedDate(new Date());
             this.moduleRepository.saveAndFlush(module);
+            return this.convertModuleToViewModel(module);
         }
+        return null;
     }
 
     @Override
-    public void disableModule(Integer id) {
-        Module module = this.moduleRepository.findModuleByIdAndActiveTrue(id);
-        if (this.isInModuleRepository(module)){
-            module.setActive(false);
-            this.moduleRepository.saveAndFlush(module);
-        }
+    public boolean exists(final Integer id) {
+        return this.moduleRepository.exists(id);
     }
 
-    @Override
-    public void addCourseToModule(Integer moduleId, Integer courseId) {
-        Module module = this.getModule(moduleId);
-        Course course = this.courseServices.getCourse(courseId);
-        if (module != null && course != null){
-            course.setModule(module);
-            this.courseServices.updateCourse(course);
-
-        }
+    private ModuleViewModel convertModuleToViewModel(final Module module) {
+        return this.modelMapper.map(module,ModuleViewModel.class);
     }
 
-    @Override
-    public void removeCourseFromModule(Integer moduleId, Integer courseId) {
-        Module module = this.getModule(moduleId);
-        Course course = this.courseServices.getCourse(courseId);
-        if (module != null && course != null) {
-            course.setModule(null);
-            this.courseServices.updateCourse(course);
+    private List<ModuleViewModel> convertModulesListToViewModelsList(final List<Module> modules) {
+        List<ModuleViewModel> moduleViewModels = new ArrayList<>();
+        for (Module module : modules) {
+            ModuleViewModel currentModel = this.convertModuleToViewModel(module);
+            moduleViewModels.add(currentModel);
         }
+        return moduleViewModels;
     }
 }
