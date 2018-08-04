@@ -10,6 +10,8 @@ import java.util.List;
 public interface ModuleServices {
     List<ModuleViewModel> getAllModules();
     ModuleViewModel getModuleById(final Integer id);
+    Module getModuleEntityById(final Integer id);
     ModuleViewModel createModule(final ModuleBindingModel moduleBindingModel);
     ModuleViewModel updateModule(final ModuleBindingModel moduleBindingModel);
+    boolean exists(final Integer id);
 }

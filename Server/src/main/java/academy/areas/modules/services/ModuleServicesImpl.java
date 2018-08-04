@@ -29,12 +29,17 @@ public class ModuleServicesImpl implements ModuleServices{
     }
 
     @Override
-    public ModuleViewModel getModuleById(Integer id) {
+    public ModuleViewModel getModuleById(final Integer id) {
         return this.convertModuleToViewModel(this.moduleRepository.findOne(id));
     }
 
     @Override
-    public ModuleViewModel createModule(ModuleBindingModel moduleBindingModel) {
+    public Module getModuleEntityById(Integer id) {
+        return this.moduleRepository.findOne(id);
+    }
+
+    @Override
+    public ModuleViewModel createModule(final ModuleBindingModel moduleBindingModel) {
         if (moduleBindingModel != null){
             Module module = this.modelMapper.map(moduleBindingModel,Module.class);
             module.setActive(true);
@@ -47,7 +52,7 @@ public class ModuleServicesImpl implements ModuleServices{
     }
 
     @Override
-    public ModuleViewModel updateModule(ModuleBindingModel moduleBindingModel) {
+    public ModuleViewModel updateModule(final ModuleBindingModel moduleBindingModel) {
         if (this.moduleRepository.exists(moduleBindingModel.getId())){
             Module module = this.modelMapper.map(moduleBindingModel,Module.class);
             module.setCreationDate(new Date());
@@ -58,11 +63,16 @@ public class ModuleServicesImpl implements ModuleServices{
         return null;
     }
 
-    private ModuleViewModel convertModuleToViewModel(Module module) {
+    @Override
+    public boolean exists(final Integer id) {
+        return this.moduleRepository.exists(id);
+    }
+
+    private ModuleViewModel convertModuleToViewModel(final Module module) {
         return this.modelMapper.map(module,ModuleViewModel.class);
     }
 
-    private List<ModuleViewModel> convertModulesListToViewModelsList(List<Module> modules) {
+    private List<ModuleViewModel> convertModulesListToViewModelsList(final List<Module> modules) {
         List<ModuleViewModel> moduleViewModels = new ArrayList<>();
         for (Module module : modules) {
             ModuleViewModel currentModel = this.convertModuleToViewModel(module);
