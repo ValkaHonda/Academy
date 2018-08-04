@@ -38,6 +38,11 @@ public class CourseServicesImpl implements CourseServices {
     }
 
     @Override
+    public Course getCourseEntityById(Integer id) {
+        return this.courseRepository.findOne(id);
+    }
+
+    @Override
     public CourseViewModel createCourse(CourseBindingModel courseBindingModel, Module module) {
         Course course = this.modelMapper.map(courseBindingModel,Course.class);
         course.setModule(module);

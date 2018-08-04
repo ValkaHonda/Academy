@@ -32,7 +32,7 @@ public class CourseRestController {
         return this.courseServices.getAllCourses();
     }
     @PostMapping("/create/{moduleId}")
-    public @ResponseBody  CourseViewModel createModule(@RequestBody final CourseBindingModel courseBindingModel,
+    public @ResponseBody  CourseViewModel createCourse(@RequestBody final CourseBindingModel courseBindingModel,
                                                        @PathVariable final Integer moduleId){
         Module module = this.moduleServices.getModuleEntityById(moduleId);
         if (this.moduleServices.exists(moduleId)){

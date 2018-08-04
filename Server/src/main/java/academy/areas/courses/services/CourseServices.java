@@ -11,6 +11,7 @@ import java.util.List;
 public interface CourseServices {
     List<CourseViewModel> getAllCourses();
     CourseViewModel getCourseById(final Integer id);
+    Course getCourseEntityById(final Integer id);
     CourseViewModel createCourse(final CourseBindingModel courseBindingModel, Module module);
     CourseViewModel updateCourse(final CourseBindingModel courseBindingModel);
 }
