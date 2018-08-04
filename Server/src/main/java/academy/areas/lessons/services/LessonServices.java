@@ -1,16 +1,15 @@
 package academy.areas.lessons.services;
 
+import academy.areas.courses.entities.Course;
 import academy.areas.lessons.entities.Lesson;
+import academy.areas.lessons.models.bindingModels.LessonBindingModel;
 import academy.areas.lessons.models.viewModels.LessonViewModel;
 
 import java.util.List;
 
 public interface LessonServices {
-    List<Lesson> getAllLessons();
-    Lesson getLesson(final Integer id);
-    Integer createLesson(Lesson lesson);
-    void updateLesson(Lesson lesson);
-    void disableLesson(final Integer id);
-
-    LessonViewModel getLessonById(Integer id) throws Exception;
+    List<LessonViewModel> getAllLessons();
+    LessonViewModel getLessonById(final Integer id);
+    LessonViewModel createLesson(final LessonBindingModel lessonBindingModel, Course course);
+    LessonViewModel updateCourse(final LessonBindingModel lessonBindingModel);
 }
