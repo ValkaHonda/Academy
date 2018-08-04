@@ -22,6 +22,10 @@ public class Lesson {
 
     public Lesson() { }
 
+    public Lesson(Course course) {
+        this.course = course;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getId() {

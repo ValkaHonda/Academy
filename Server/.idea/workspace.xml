@@ -38,12 +38,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CourseServicesImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/courses/services/CourseServicesImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="method#CourseServicesImpl#0;class#CourseServicesImpl#0" expanded="false" />
+                <element signature="method#getAllCourses#0;class#CourseServicesImpl#0" expanded="false" />
+                <element signature="method#getCourseById#0;class#CourseServicesImpl#0" expanded="false" />
+                <element signature="method#createCourse#0;class#CourseServicesImpl#0" expanded="false" />
+                <element signature="method#updateCourse#0;class#CourseServicesImpl#0" expanded="false" />
+                <element signature="method#convertToViewModel#0;class#CourseServicesImpl#0" expanded="false" />
+                <element signature="method#convertToViewModelList#0;class#CourseServicesImpl#0" expanded="false" />
+                <element signature="method#transferDataToEntity#0;class#CourseServicesImpl#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Lesson.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="372">
+              <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+              <folding>
+                <element signature="e#644#645#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,19 +72,9 @@
       <file leaf-file-name="LessonServicesImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/services/LessonServicesImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#910#911#0" expanded="true" />
-                <element signature="e#980#981#0" expanded="true" />
-                <element signature="e#1007#1008#0" expanded="true" />
-                <element signature="e#1118#1119#0" expanded="true" />
-                <element signature="e#1145#1146#0" expanded="true" />
-                <element signature="e#1241#1242#0" expanded="true" />
-                <element signature="e#1268#1269#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="42">
+              <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -177,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/admins/controllers/AdminRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/modules/entities/Module.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/courses/entities/Course.java" />
-        <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/teachers/controllers/TeacherRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/users/entities/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/courses/repositories/CourseRepository.java" />
@@ -204,6 +214,7 @@
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/controllers/LessonRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/models/bindingModels/LessonBindingModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/services/LessonServices.java" />
+        <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java" />
         <option value="$PROJECT_DIR$/src/main/java/academy/areas/lessons/services/LessonServicesImpl.java" />
       </list>
     </option>
@@ -1162,12 +1173,12 @@
       <workItem from="1533025053840" duration="19000" />
       <workItem from="1533025610393" duration="21405000" />
       <workItem from="1533194486769" duration="12326000" />
-      <workItem from="1533285996104" duration="14900000" />
+      <workItem from="1533285996104" duration="16593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216925000" />
+    <option name="totallyTimeSpent" value="218618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1667,23 +1678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/courses/services/CourseServicesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="method#CourseServicesImpl#0;class#CourseServicesImpl#0" expanded="false" />
-            <element signature="method#getAllCourses#0;class#CourseServicesImpl#0" expanded="false" />
-            <element signature="method#getCourseById#0;class#CourseServicesImpl#0" expanded="false" />
-            <element signature="method#createCourse#0;class#CourseServicesImpl#0" expanded="false" />
-            <element signature="method#updateCourse#0;class#CourseServicesImpl#0" expanded="false" />
-            <element signature="method#convertToViewModel#0;class#CourseServicesImpl#0" expanded="false" />
-            <element signature="method#convertToViewModelList#0;class#CourseServicesImpl#0" expanded="false" />
-            <element signature="method#transferDataToEntity#0;class#CourseServicesImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/courses/controllers/CourseRestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
@@ -1695,17 +1689,6 @@
             <element signature="e#1073#1074#0" expanded="true" />
             <element signature="method#createModule#0;class#CourseRestController#0" expanded="false" />
             <element signature="method#updateCourse#0;class#CourseRestController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/controllers/LessonRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1730,9 +1713,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/entities/Lesson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="372">
+          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="e#644#645#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1780,6 +1765,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/controllers/LessonRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/courses/services/CourseServicesImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="method#CourseServicesImpl#0;class#CourseServicesImpl#0" expanded="false" />
+            <element signature="method#getAllCourses#0;class#CourseServicesImpl#0" expanded="false" />
+            <element signature="method#getCourseById#0;class#CourseServicesImpl#0" expanded="false" />
+            <element signature="method#createCourse#0;class#CourseServicesImpl#0" expanded="false" />
+            <element signature="method#updateCourse#0;class#CourseServicesImpl#0" expanded="false" />
+            <element signature="method#convertToViewModel#0;class#CourseServicesImpl#0" expanded="false" />
+            <element signature="method#convertToViewModelList#0;class#CourseServicesImpl#0" expanded="false" />
+            <element signature="method#transferDataToEntity#0;class#CourseServicesImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/services/LessonServices.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -1790,19 +1803,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/academy/areas/lessons/services/LessonServicesImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#980#981#0" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1118#1119#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1268#1269#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="42">
+          <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
