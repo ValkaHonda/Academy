@@ -23,6 +23,8 @@ public class User {
 
     public User() { }
 
+    public User(String userName, String firstName, String password) { }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer getId() {
