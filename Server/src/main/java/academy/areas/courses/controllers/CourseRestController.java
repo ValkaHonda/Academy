@@ -27,13 +27,15 @@ public class CourseRestController {
     public CourseViewModel getCourseById(@PathVariable final Integer id){
         return this.courseServices.getCourseById(id);
     }
+
     @GetMapping("/getAll")
     public List<CourseViewModel> getCourses(){
         return this.courseServices.getAllCourses();
     }
+
     @PostMapping("/create/{moduleId}")
     public @ResponseBody  CourseViewModel createCourse(@RequestBody final CourseBindingModel courseBindingModel,
-                                                       @PathVariable final Integer moduleId){
+                                                       @PathVariable("moduleId") final Integer moduleId){
         Module module = this.moduleServices.getModuleEntityById(moduleId);
         if (this.moduleServices.exists(moduleId)){
             return this.courseServices.createCourse(courseBindingModel,module);
@@ -41,6 +43,7 @@ public class CourseRestController {
         }
         return null;
     }
+
     @PutMapping("/update")
     public @ResponseBody CourseViewModel updateCourse(@RequestBody CourseBindingModel courseBindingModel){
         return this.courseServices.updateCourse(courseBindingModel);

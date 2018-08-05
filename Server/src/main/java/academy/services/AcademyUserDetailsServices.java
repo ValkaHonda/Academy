@@ -13,7 +13,7 @@ import academy.areas.users.repositories.*;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
+/*
 @Service("academyUserDetailsServices")
 public class AcademyUserDetailsServices implements UserDetailsService {
    private final UserRepository userRepository;
@@ -41,3 +41,4 @@ public class AcademyUserDetailsServices implements UserDetailsService {
         }
     }
 }
+*/
