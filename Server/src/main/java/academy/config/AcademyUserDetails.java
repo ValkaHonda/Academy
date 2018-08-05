@@ -10,7 +10,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.Collection;
 import java.util.List;
-/*
+
 public class AcademyUserDetails extends User implements UserDetails{
     private User user;
     private List<Role> roles; // It was done with Array list in the example
@@ -55,4 +55,3 @@ public class AcademyUserDetails extends User implements UserDetails{
         return this.user;
     }
 }
-*/

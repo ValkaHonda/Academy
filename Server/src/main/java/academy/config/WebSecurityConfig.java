@@ -13,7 +13,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-/*
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
@@ -30,26 +31,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
-        http.authorizeRequests()
-                .antMatchers("/admin/**")
-                .hasRole("ADMIN")
-                .anyRequest()
-                .permitAll()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .usernameParameter("email")
-                .passwordParameter("password")
-                .and()
-                .logout()
-                .logoutSuccessUrl("/login?logout")
-                .and()
-                .exceptionHandling()
-                .accessDeniedPage("/error/403")
-                .and()
-                .csrf();
+
+        http.csrf()
+            .disable();
     }
 
 
 }
-*/
