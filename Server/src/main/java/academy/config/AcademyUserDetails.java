@@ -29,7 +29,7 @@ public class AcademyUserDetails extends User implements UserDetails{
 
     @Override
     public String getUsername() {
-        return this.user.getUserName();
+        return null;
     }
 
     @Override
@@ -51,6 +51,7 @@ public class AcademyUserDetails extends User implements UserDetails{
     public boolean isEnabled() {
         return true;
     }
+
     public User getUser(){
         return this.user;
     }

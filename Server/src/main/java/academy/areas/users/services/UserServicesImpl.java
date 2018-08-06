@@ -45,6 +45,7 @@ public class UserServicesImpl implements UserServices {
         userBindingModel.setPassword(this.bCryptPasswordEncoder.encode(userBindingModel.getPassword()));
         User user = this.transferDataToEntity(userBindingModel);
         user.setRoles(new HashSet<>());
+        user.setActive(true);
         user.getRoles().add(role);
         this.userRepository.saveAndFlush(user);
         return this.convertToViewModel(user);
