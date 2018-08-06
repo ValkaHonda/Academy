@@ -29,12 +29,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception{
-
-        http.csrf()
-            .disable();
+    @Override protected void configure(HttpSecurity http) throws Exception {
+        http.antMatcher("/test/**") // this is example for what it is going to be hide for non users
+            .authorizeRequests()
+            .anyRequest().authenticated()
+            .and()
+            .formLogin()
+            .and()
+            .httpBasic();
     }
-
-
 }
