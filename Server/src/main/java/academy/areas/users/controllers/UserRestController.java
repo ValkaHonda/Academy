@@ -1,5 +1,7 @@
 package academy.areas.users.controllers;
 
+import academy.areas.courses.entities.Course;
+import academy.areas.courses.services.CourseServices;
 import academy.areas.users.entities.Role;
 import academy.areas.users.entities.User;
 import academy.areas.users.model.bindingModels.UserBindingModel;
@@ -19,11 +21,14 @@ import java.util.List;
 public class UserRestController {
     private UserServices userServices;
     private RoleServices roleServices;
+    private CourseServices courseServices;
 
     @Autowired
-    public UserRestController(final UserServices userServices, final RoleServices roleServices) {
+    public UserRestController(final UserServices userServices, final RoleServices roleServices,
+                              final CourseServices courseServices) {
         this.userServices = userServices;
         this.roleServices = roleServices;
+        this.courseServices = courseServices;
     }
 
     @GetMapping("/getById/{id}")
@@ -45,5 +50,13 @@ public class UserRestController {
     @PutMapping("/update")
     public @ResponseBody UserViewModel updateUser(@RequestBody UserUpdateBindingModel userBindingModel){
         return this.userServices.updateUser(userBindingModel);
+    }
+
+    @PostMapping("/assignToCourse/{courseId}")
+    public @ResponseBody UserViewModel assignToCourse(@PathVariable final Integer courseId,
+                                                      @RequestBody final UserBindingModel userBindingModel){
+        User user = this.userServices.getUserEntityById(userBindingModel.getId());
+        Course course = this.courseServices.getCourseEntityById(courseId);
+        return this.userServices.assignStudentToCourse(user,course);
     }
 }

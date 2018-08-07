@@ -1,5 +1,6 @@
 package academy.areas.users.services;
 
+import academy.areas.courses.entities.Course;
 import academy.areas.users.entities.Role;
 import academy.areas.users.entities.User;
 import academy.areas.users.model.bindingModels.UserBindingModel;
@@ -37,6 +38,11 @@ public class UserServicesImpl implements UserServices {
     }
 
     @Override
+    public User getUserEntityById(Integer id) {
+        return this.userRepository.findOne(id);
+    }
+
+    @Override
     public List<UserViewModel> getAllUsers() {
         List<User> userEntities = this.userRepository.findAll();
         return this.convertToViewModelList(userEntities);
@@ -61,6 +67,19 @@ public class UserServicesImpl implements UserServices {
         if (user != null){
             user = this.transferDataToEntity(user,userUpdateBindingModel);
             user.setLastModifiedDate(new Date());
+            this.userRepository.saveAndFlush(user);
+            return this.convertToViewModel(user);
+        }
+        return null;
+    }
+
+    @Override
+    public UserViewModel assignStudentToCourse(final User user, final Course course) {
+        if (user != null && course != null){
+            if (user.getCourses() == null){
+                user.setCourses(new HashSet<>());
+            }
+            user.getCourses().add(course);
             this.userRepository.saveAndFlush(user);
             return this.convertToViewModel(user);
         }
