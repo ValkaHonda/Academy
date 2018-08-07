@@ -25,9 +25,12 @@ public class User implements UserDetails {
     private Set<Role> roles;
     private Set<Course> courses;
 
-    public User() { }
+    public User() {
+    }
 
-    public User(String userName, String firstName, String password) { }
+    public User(String userName, String firstName, String password) {
+    }
+
     public User(String subject, String s, Collection<? extends GrantedAuthority> authorities) {
         this.setRoles(new HashSet<>());
     }
@@ -42,7 +45,8 @@ public class User implements UserDetails {
     public void setId(Integer id) {
         this.id = id;
     }
-    @Column(name ="user_name", unique=true)
+
+    @Column(name = "user_name", unique = true)
     public String getUserName() {
         return userName;
     }
@@ -51,7 +55,7 @@ public class User implements UserDetails {
         this.userName = userName;
     }
 
-    @Column(name ="first_name")
+    @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -60,7 +64,7 @@ public class User implements UserDetails {
         this.firstName = firstName;
     }
 
-    @Column(name ="last_name")
+    @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
@@ -69,7 +73,7 @@ public class User implements UserDetails {
         this.lastName = lastName;
     }
 
-    @Column(name ="email")
+    @Column(name = "email")
     public String getEmail() {
         return email;
     }
@@ -79,18 +83,17 @@ public class User implements UserDetails {
     }
 
 
-    @Column(name ="password")
+    @Column(name = "password")
     public String getPassword() {
         return password;
     }
-
 
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    @Column(name="create_at")
+    @Column(name = "create_at")
     @Temporal(TemporalType.TIMESTAMP)
     public Date getCreateDate() {
         return createDate;
@@ -100,7 +103,7 @@ public class User implements UserDetails {
         this.createDate = createDate;
     }
 
-    @Column(name="modified_at")
+    @Column(name = "modified_at")
     @Temporal(TemporalType.TIMESTAMP)
     public Date getLastModifiedDate() {
         return lastModifiedDate;

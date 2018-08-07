@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception{
+    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(this.userDetailsService)
                 .passwordEncoder(this.bCryptPasswordEncoder);
     }
@@ -52,8 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").authenticated()
                 .and()
                 .apply(securityConfigurerAdapter());
-
     }
+
     private JWTConfigurer securityConfigurerAdapter() {
         return new JWTConfigurer(tokenProvider);
     }
