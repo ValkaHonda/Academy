@@ -30,6 +30,7 @@ public class LessonRestController {
     public List<LessonViewModel> getLessons(){
         return this.lessonServices.getAllLessons();
     }
+
     @PostMapping("/create/{courseId}")
     public @ResponseBody  LessonViewModel createLesson(@RequestBody final LessonBindingModel lessonBindingModel,
                                                        @PathVariable final Integer courseId){

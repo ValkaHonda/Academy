@@ -1,14 +1,10 @@
 package academy.areas.users.model.bindingModels;
 
-import java.util.Date;
-
-public class UserBindingModel {
+public class UserUpdateBindingModel {
     private Integer id;
-    private String userName;
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
 
     public Integer getId() {
         return id;
@@ -16,14 +12,6 @@ public class UserBindingModel {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getFirstName() {
@@ -48,13 +36,5 @@ public class UserBindingModel {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

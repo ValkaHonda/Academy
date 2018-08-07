@@ -79,7 +79,7 @@ public class Course {
         this.module = module;
     }
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course", orphanRemoval = true)
     public Set<Lesson> getLessons() {
         return lessons;
     }

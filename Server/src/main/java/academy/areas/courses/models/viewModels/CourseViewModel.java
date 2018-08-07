@@ -14,8 +14,6 @@ public class CourseViewModel {
     private Date lastModifiedDate;
     private boolean isActive;
     private Module module;
-    private Set<Lesson> lessons;
-    private Set<User> users;
 
     public CourseViewModel() {
     }
@@ -68,19 +66,4 @@ public class CourseViewModel {
         this.module = module;
     }
 
-    public Set<Lesson> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(Set<Lesson> lessons) {
-        this.lessons = lessons;
-    }
-
-    public Set<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Set<User> users) {
-        this.users = users;
-    }
 }

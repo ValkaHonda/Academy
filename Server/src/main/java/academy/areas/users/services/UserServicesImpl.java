@@ -1,8 +1,10 @@
 package academy.areas.users.services;
 
+import academy.areas.courses.entities.Course;
 import academy.areas.users.entities.Role;
 import academy.areas.users.entities.User;
 import academy.areas.users.model.bindingModels.UserBindingModel;
+import academy.areas.users.model.bindingModels.UserUpdateBindingModel;
 import academy.areas.users.models.viewModels.UserViewModel;
 import academy.areas.users.repositories.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -11,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
@@ -35,6 +38,11 @@ public class UserServicesImpl implements UserServices {
     }
 
     @Override
+    public User getUserEntityById(Integer id) {
+        return this.userRepository.findOne(id);
+    }
+
+    @Override
     public List<UserViewModel> getAllUsers() {
         List<User> userEntities = this.userRepository.findAll();
         return this.convertToViewModelList(userEntities);
@@ -47,8 +55,35 @@ public class UserServicesImpl implements UserServices {
         user.setRoles(new HashSet<>());
         user.setActive(true);
         user.getRoles().add(role);
+        user.setCreateDate(new Date());
+        user.setLastModifiedDate(new Date());
         this.userRepository.saveAndFlush(user);
         return this.convertToViewModel(user);
+    }
+
+    @Override
+    public UserViewModel updateUser(UserUpdateBindingModel userUpdateBindingModel) {
+        User user = this.userRepository.findOne(userUpdateBindingModel.getId());
+        if (user != null){
+            user = this.transferDataToEntity(user,userUpdateBindingModel);
+            user.setLastModifiedDate(new Date());
+            this.userRepository.saveAndFlush(user);
+            return this.convertToViewModel(user);
+        }
+        return null;
+    }
+
+    @Override
+    public UserViewModel assignStudentToCourse(final User user, final Course course) {
+        if (user != null && course != null){
+            if (user.getCourses() == null){
+                user.setCourses(new HashSet<>());
+            }
+            user.getCourses().add(course);
+            this.userRepository.saveAndFlush(user);
+            return this.convertToViewModel(user);
+        }
+        return null;
     }
 
     private UserViewModel convertToViewModel(User user){
@@ -64,5 +99,12 @@ public class UserServicesImpl implements UserServices {
     }
     private User transferDataToEntity(UserBindingModel userBindingModel){
         return modelMapper.map(userBindingModel,User.class);
+    }
+
+    private User transferDataToEntity(User user, UserUpdateBindingModel userBindingModel){
+        user.setFirstName(userBindingModel.getFirstName());
+        user.setLastName(userBindingModel.getLastName());
+        user.setEmail(userBindingModel.getEmail());
+        return user;
     }
 }

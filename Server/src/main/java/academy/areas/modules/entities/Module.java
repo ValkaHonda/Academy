@@ -4,6 +4,8 @@ import academy.areas.courses.entities.Course;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "modules")
@@ -13,8 +15,10 @@ public class Module {
     private Date creationDate;
     private Date lastModifiedDate;
     private boolean isActive;
+    private Set<Course> courses;
 
     public Module() {
+        this.courses = new HashSet<>();
     }
 
     @Id
@@ -64,4 +68,12 @@ public class Module {
         isActive = active;
     }
 
+    @OneToMany(mappedBy = "module", orphanRemoval = true)
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
 }
