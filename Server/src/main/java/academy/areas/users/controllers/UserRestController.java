@@ -25,12 +25,6 @@ public class UserRestController {
         this.roleServices = roleServices;
     }
 
-    @PostMapping("/login")
-    public User login(@RequestBody UserLoginBindingModel bindingModel){
-        UserDetails principal = null;
-        return null;
-    }
-
     @GetMapping("/getById/{id}")
     public UserViewModel getUserById(@PathVariable final Integer id){
         return this.userServices.getUserById(id);

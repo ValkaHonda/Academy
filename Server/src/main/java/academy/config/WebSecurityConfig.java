@@ -1,6 +1,8 @@
 package academy.config;
 
 
+import academy.config.jsonWebToken.JWTConfigurer;
+import academy.config.jsonWebToken.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +13,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
@@ -24,16 +27,36 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
 
     @Autowired
+    private TokenProvider tokenProvider;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception{
         auth.userDetailsService(this.userDetailsService)
-                .passwordEncoder(new BCryptPasswordEncoder());
+                .passwordEncoder(this.bCryptPasswordEncoder);
     }
 
-    @Override protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .anyRequest()
-                .permitAll()
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .csrf()
+                .disable()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .csrf().disable();
+                .authorizeRequests()
+                .antMatchers("/home").permitAll()
+                .antMatchers("/register").permitAll()
+                .antMatchers("/authenticate").permitAll()
+                .antMatchers("/**").authenticated()
+                .and()
+                .apply(securityConfigurerAdapter());
+
+    }
+    private JWTConfigurer securityConfigurerAdapter() {
+        return new JWTConfigurer(tokenProvider);
     }
 }
+

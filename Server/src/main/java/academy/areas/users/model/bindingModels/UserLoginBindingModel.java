@@ -3,6 +3,8 @@ package academy.areas.users.model.bindingModels;
 public class UserLoginBindingModel {
     private String username;
     private String password;
+    private Boolean isRememberMe;
+
 
     public String getUsername() {
         return username;
@@ -18,5 +20,13 @@ public class UserLoginBindingModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Boolean getRememberMe() {
+        return isRememberMe;
+    }
+
+    public void setRememberMe(Boolean rememberMe) {
+        isRememberMe = rememberMe;
     }
 }
