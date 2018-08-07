@@ -1,14 +1,18 @@
 package academy.areas.users.entities;
 
 import academy.areas.courses.entities.Course;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements UserDetails {
     private Integer id;
     private String userName;
     private String firstName;
@@ -24,6 +28,10 @@ public class User {
     public User() { }
 
     public User(String userName, String firstName, String password) { }
+    public User(String subject, String s, Collection<? extends GrantedAuthority> authorities) {
+        this.setRoles(new HashSet<>());
+    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -70,10 +78,13 @@ public class User {
         this.email = email;
     }
 
+
     @Column(name ="password")
     public String getPassword() {
         return password;
     }
+
+
 
     public void setPassword(String password) {
         this.password = password;
@@ -127,4 +138,41 @@ public class User {
     public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
+
+    @Transient
+    @Override
+    public String getUsername() {
+        return this.userName;
+    }
+
+    @Transient
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Transient
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Transient
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Transient
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    @Transient
+    @Override
+    public Set<Role> getAuthorities() {
+        return this.roles;
+    }
+
 }

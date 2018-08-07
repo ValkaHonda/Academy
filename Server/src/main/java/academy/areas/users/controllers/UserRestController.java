@@ -1,11 +1,14 @@
 package academy.areas.users.controllers;
 
 import academy.areas.users.entities.Role;
+import academy.areas.users.entities.User;
 import academy.areas.users.model.bindingModels.UserBindingModel;
+import academy.areas.users.model.bindingModels.UserLoginBindingModel;
 import academy.areas.users.models.viewModels.UserViewModel;
 import academy.areas.users.services.RoleServices;
 import academy.areas.users.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,8 +20,9 @@ public class UserRestController {
     private RoleServices roleServices;
 
     @Autowired
-    public UserRestController(final UserServices userServices) {
+    public UserRestController(final UserServices userServices, final RoleServices roleServices) {
         this.userServices = userServices;
+        this.roleServices = roleServices;
     }
 
     @GetMapping("/getById/{id}")
