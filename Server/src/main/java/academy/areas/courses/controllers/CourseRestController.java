@@ -17,11 +17,11 @@ public class CourseRestController {
     private ModuleServices moduleServices;
 
     @Autowired
-    public CourseRestController(final CourseServices courseServices) {
+    public CourseRestController(final CourseServices courseServices,
+                                final ModuleServices moduleServices) {
         this.courseServices = courseServices;
+        this.moduleServices = moduleServices;
     }
-
-
 
     @GetMapping("/getById/{id}")
     public CourseViewModel getCourseById(@PathVariable final Integer id){
@@ -36,7 +36,19 @@ public class CourseRestController {
     @PostMapping("/create/{moduleId}")
     public @ResponseBody  CourseViewModel createCourse(@RequestBody final CourseBindingModel courseBindingModel,
                                                        @PathVariable("moduleId") final Integer moduleId){
+
+
+
         Module module = this.moduleServices.getModuleEntityById(moduleId);
+
+        if (module == null){
+            System.out.println("nul");
+            System.out.println("nul");
+            System.out.println("nul");
+            System.out.println("nul");
+            System.out.println("nul");
+        }
+
         if (this.moduleServices.exists(moduleId)){
             return this.courseServices.createCourse(courseBindingModel,module);
 
