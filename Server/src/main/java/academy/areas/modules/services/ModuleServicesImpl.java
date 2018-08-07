@@ -55,7 +55,6 @@ public class ModuleServicesImpl implements ModuleServices{
     public ModuleViewModel updateModule(final ModuleBindingModel moduleBindingModel) {
         if (this.moduleRepository.exists(moduleBindingModel.getId())){
             Module module = this.modelMapper.map(moduleBindingModel,Module.class);
-            module.setCreationDate(new Date());
             module.setLastModifiedDate(new Date());
             this.moduleRepository.saveAndFlush(module);
             return this.convertModuleToViewModel(module);
