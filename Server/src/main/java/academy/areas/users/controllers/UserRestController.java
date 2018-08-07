@@ -4,6 +4,7 @@ import academy.areas.users.entities.Role;
 import academy.areas.users.entities.User;
 import academy.areas.users.model.bindingModels.UserBindingModel;
 import academy.areas.users.model.bindingModels.UserLoginBindingModel;
+import academy.areas.users.model.bindingModels.UserUpdateBindingModel;
 import academy.areas.users.models.viewModels.UserViewModel;
 import academy.areas.users.services.RoleServices;
 import academy.areas.users.services.UserServices;
@@ -39,5 +40,10 @@ public class UserRestController {
     public @ResponseBody UserViewModel registerUser(@RequestBody UserBindingModel userBindingModel){
         Role role = this.roleServices.getRoleByName("ROLE_STUDENT");
         return this.userServices.registerUser(userBindingModel,role);
+    }
+
+    @PutMapping("/update")
+    public @ResponseBody UserViewModel updateUser(@RequestBody UserUpdateBindingModel userBindingModel){
+        return this.userServices.updateUser(userBindingModel);
     }
 }
