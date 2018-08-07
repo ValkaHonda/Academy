@@ -36,22 +36,9 @@ public class CourseRestController {
     @PostMapping("/create/{moduleId}")
     public @ResponseBody  CourseViewModel createCourse(@RequestBody final CourseBindingModel courseBindingModel,
                                                        @PathVariable("moduleId") final Integer moduleId){
-
-
-
         Module module = this.moduleServices.getModuleEntityById(moduleId);
-
-        if (module == null){
-            System.out.println("nul");
-            System.out.println("nul");
-            System.out.println("nul");
-            System.out.println("nul");
-            System.out.println("nul");
-        }
-
-        if (this.moduleServices.exists(moduleId)){
+        if (module != null){
             return this.courseServices.createCourse(courseBindingModel,module);
-
         }
         return null;
     }

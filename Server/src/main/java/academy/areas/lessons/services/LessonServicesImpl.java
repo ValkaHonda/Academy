@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -37,8 +38,11 @@ public class LessonServicesImpl implements LessonServices{
 
     @Override
     public LessonViewModel createLesson(LessonBindingModel lessonBindingModel, Course course) {
-        Lesson lesson = new Lesson(course);
+        Lesson lesson = new Lesson();
         lesson = this.transferDataToEntity(lesson,lessonBindingModel);
+        lesson.setCourse(course);
+        lesson.setCreationDate(new Date());
+        lesson.setLastModifiedDate(new Date());
         this.lessonRepository.saveAndFlush(lesson);
         return this.convertToViewModel(lesson);
     }
@@ -47,6 +51,7 @@ public class LessonServicesImpl implements LessonServices{
     public LessonViewModel updateCourse(LessonBindingModel lessonBindingModel) {
         Lesson lesson = this.lessonRepository.findOne(lessonBindingModel.getId());
         lesson = this.transferDataToEntity(lesson,lessonBindingModel);
+        lesson.setLastModifiedDate(new Date());
         this.lessonRepository.saveAndFlush(lesson);
         return this.convertToViewModel(lesson);
     }
