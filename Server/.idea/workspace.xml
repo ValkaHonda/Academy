@@ -923,7 +923,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273033000" />
+    <option name="totallyTimeSpent" value="273632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1192,15 +1192,15 @@
         <state relative-caret-position="378">
           <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
           <folding>
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="e#1622#1623#0" expanded="true" />
-            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#792#793#0" expanded="false" />
+            <element signature="e#840#841#0" expanded="false" />
+            <element signature="e#881#882#0" expanded="false" />
+            <element signature="e#920#921#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="false" />
+            <element signature="e#1038#1039#0" expanded="false" />
+            <element signature="e#1622#1623#0" expanded="false" />
+            <element signature="e#1654#1655#0" expanded="false" />
           </folding>
         </state>
       </provider>
