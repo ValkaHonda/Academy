@@ -11,9 +11,14 @@
         <button class="btn-success">about</button>
       </a>
   </div>
-  <div class="col-sm-1">
+  <div *ngIf="!login" class="col-sm-1">
       <a routerLink="/login">
         <button class="btn-success">login</button>
+      </a>
+  </div>
+  <div *ngIf="login" class="col-sm-1">
+      <a routerLink="/about">
+        <button class="btn-success">logout</button>
       </a>
   </div>
   

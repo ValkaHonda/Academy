@@ -1,4 +1,16 @@
-<h1>Are you ready log in?</h1>
-<p>
-  login works!
-</p>
+
+<div class="col-sm-12">
+    <div> 
+        <label for="username">username:</label>
+        <input [(ngModel)]="username" type="text">
+    </div>
+  <div> 
+    <label for="password">password:</label>
+    <input [(ngModel)]="password" type="text">
+  </div>
+  <div>
+      
+        <button (click)="submit()" type="button" class="btn btn-success">login</button>
+   
+  </div>
+</div>
