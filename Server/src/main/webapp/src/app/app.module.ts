@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { FormsModule }   from '@angular/forms';
 import { ModulesComponent } from './modules/modules.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 
 
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
