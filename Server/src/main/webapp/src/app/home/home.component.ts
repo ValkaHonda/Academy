@@ -1,4 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { UserStateService } from '../services/user-state-service/user-state.service';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,13 +8,26 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, AfterViewInit{
-
-  constructor() { }
+  login:boolean;
+  constructor(private router: Router,private userStateService:UserStateService) { 
+    this.login = false;
+  }
 
   ngOnInit() {
-  }
-  ngAfterViewInit(): void {
     console.log("homepage");
+    if(this.userStateService.token != null){
+      this.login = this.userStateService.login();
+    } else {
+      this.login = false;
+    }
+  }
+
+  ngAfterViewInit(): void {  }
+
+  logout(){
+    this.userStateService.token.login=false;
+    localStorage.setItem('currentUser', JSON.stringify(this.userStateService.token));
+    this.login = false;
   }
 
 }

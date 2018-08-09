@@ -26,15 +26,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(){
     console.log("login page");
   }
-
   submit(): void{
-    this.router.navigate(['./']);
-    this.userLoginService.login2().subscribe(
+     this.userLoginService.login2().subscribe(
       (data:TokenImpl) => {
           data.login = true;
           localStorage.setItem('currentUser', JSON.stringify(data));
-          console.log(JSON.parse(localStorage.getItem('currentUser')).id_token);
-          console.log(JSON.parse(localStorage.getItem('currentUser')).login);
+          this.router.navigate(['./']);
       },
       error => {
           console.log("Error You will find a way to fix it!", error);

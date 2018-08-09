@@ -11,6 +11,7 @@ export class UserStateService {
   }
 
   public login():boolean{
+    this.token = JSON.parse(localStorage.getItem('currentUser'));
     if(this.token != null){
       return this.token.login;
     }
@@ -18,6 +19,7 @@ export class UserStateService {
   }
 
   public getToken():String{
+    this.token = JSON.parse(localStorage.getItem('currentUser'));
     return this.token.id_token;
   }
   

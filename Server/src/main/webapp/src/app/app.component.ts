@@ -8,15 +8,12 @@ import { UserStateService } from './services/user-state-service/user-state.servi
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  login:boolean;
-  tokenId:String;
 
-  constructor(private userStateService:UserStateService){ 
-     this.login = false;
+  constructor(){ 
+     
   }
 
   ngAfterViewInit(){
-    console.log("Home page");
-    // this.login = this.userStateService.getState();
-   }
+  
+  }
 }
