@@ -9,6 +9,7 @@ import { Router } from '../../../node_modules/@angular/router';
 })
 export class HomeComponent implements OnInit, AfterViewInit{
   login:boolean;
+  userName:String;
   constructor(private router: Router,private userStateService:UserStateService) { 
     this.login = false;
   }
@@ -17,6 +18,9 @@ export class HomeComponent implements OnInit, AfterViewInit{
     console.log("homepage");
     if(this.userStateService.token != null){
       this.login = this.userStateService.login();
+      if(this.login == true){
+        this.userName = this.userStateService.getUserName();
+      }
     } else {
       this.login = false;
     }

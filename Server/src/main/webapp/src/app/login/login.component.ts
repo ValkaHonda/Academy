@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
      this.userLoginService.login(this.username,this.password).subscribe(
       (data:TokenImpl) => {
           data.login = true;
+          data.userName = this.username;
           localStorage.setItem('currentUser', JSON.stringify(data));
           this.router.navigate(['./']);
       },

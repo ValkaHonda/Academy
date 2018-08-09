@@ -1,25 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '../../../../node_modules/@angular/common/http';
 import { Observable, Subscription } from '../../../../node_modules/rxjs';
-
-interface Token{
-  id:String;
-  login:boolean;
-}
-
-
-const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
-    })
-  };
-
+import { UserStateService } from '../user-state-service/user-state.service';
+import { RequestOptions, Headers } from '@angular/http';
 @Injectable({
   providedIn: 'root'
 })
 export class UserLoginService {
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient, private userStateService:UserStateService) { }
   
  
   
@@ -31,4 +19,15 @@ export class UserLoginService {
       });
   }
   
+  public getUserByUserName(username:String){
+    let tokenId:String = "Bearer "+this.userStateService.getToken();
+    let url:string = "http://localhost:8080/user/GetByUserName/"+this.userStateService.getUserName();
+      const options = {
+        headers: new HttpHeaders({
+            'Authorization': tokenId.toString()
+          }
+        )
+      };
+    return this.httpClient.get(url,options);
+ }
 }
