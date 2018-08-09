@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
+import { TokenImpl } from '../../token/token';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserStateService {
-  login:boolean;
+  token:TokenImpl;
   constructor() { 
-      this.setState(false);
+    this.token = JSON.parse(localStorage.getItem('currentUser'));
   }
-  getState():boolean{
-      return this.login;
+
+  public login():boolean{
+    if(this.token != null){
+      return this.token.login;
+    }
+    return false;
   }
-  setState(state:boolean){
-    this.login = state;
+
+  public getToken():String{
+    return this.token.id_token;
   }
+  
 }

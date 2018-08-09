@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { UserStateService } from './services/user-state-service/user-state.service';
 
@@ -7,29 +7,16 @@ import { UserStateService } from './services/user-state-service/user-state.servi
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   login:boolean;
   tokenId:String;
 
-  deleteData:any;
-
-  constructor(private userStateService:UserStateService){
-    this.login = this.userStateService.getState();
-
-    this.deleteData = JSON.parse(localStorage.getItem('currentUser'));
-    console.log(this.deleteData);
+  constructor(private userStateService:UserStateService){ 
+     this.login = false;
   }
 
-  
-  ngOnInit() {
-    this.deleteData = JSON.parse(localStorage.getItem('currentUser'));
-    console.log(this.deleteData + "ng on Init");
-
-
-    console.log("Do something, Please!!!!!!!!!!!!!!!");
-
-  }
-  onActivate($event){
-    console.log("Maybe a solution");
-  }
+  ngAfterViewInit(){
+    console.log("Home page");
+    // this.login = this.userStateService.getState();
+   }
 }
