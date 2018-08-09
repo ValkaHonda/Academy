@@ -32,6 +32,15 @@ public class UserServicesImpl implements UserServices {
     }
 
     @Override
+    public UserViewModel getUserByUserName(String username) {
+        User user = this.userRepository.findUserByUserName(username);
+        if (user != null){
+            return this.convertToViewModel(user);
+        }
+        return null;
+    }
+
+    @Override
     public UserViewModel getUserById(final Integer id) {
         User user = this.userRepository.findOne(id);
         return this.convertToViewModel(user);

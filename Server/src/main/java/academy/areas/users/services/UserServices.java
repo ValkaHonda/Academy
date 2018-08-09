@@ -10,6 +10,7 @@ import academy.areas.users.models.viewModels.UserViewModel;
 import java.util.List;
 
 public interface UserServices {
+    UserViewModel getUserByUserName(String username);
     UserViewModel getUserById(final Integer id);
     User getUserEntityById(final Integer id);
     List<UserViewModel> getAllUsers();
