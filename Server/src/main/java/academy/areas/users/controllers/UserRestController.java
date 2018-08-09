@@ -41,6 +41,11 @@ public class UserRestController {
         return this.userServices.getAllUsers();
     }
 
+    @GetMapping("/GetByUserName/{userName}")
+    public @ResponseBody UserViewModel getUserByUserName(@PathVariable final String userName){
+        return this.userServices.getUserByUserName(userName);
+    }
+
     @PostMapping("/register")
     public @ResponseBody UserViewModel registerUser(@RequestBody UserBindingModel userBindingModel){
         Role role = this.roleServices.getRoleByName("ROLE_STUDENT");
