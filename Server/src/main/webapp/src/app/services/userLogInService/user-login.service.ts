@@ -21,14 +21,12 @@ const httpOptions = {
 export class UserLoginService {
   constructor(private httpClient:HttpClient) { }
   
-  public login():Observable<any>{
-    return this.httpClient.get("https://api.github.com");
-  }
+ 
   
-  public login2(){
+  public login(username:String,password:String){
      return this.httpClient.post("http://localhost:8080/authenticate",{
-        "username": "javac",
-        "password": "honda",
+        "username": username,
+        "password": password,
         "isRememberMe": false
       });
   }

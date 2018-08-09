@@ -27,7 +27,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
     console.log("login page");
   }
   submit(): void{
-     this.userLoginService.login2().subscribe(
+
+    console.log(this.username,this.password);
+
+     this.userLoginService.login(this.username,this.password).subscribe(
       (data:TokenImpl) => {
           data.login = true;
           localStorage.setItem('currentUser', JSON.stringify(data));
@@ -35,6 +38,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       },
       error => {
           console.log("Error You will find a way to fix it!", error);
+          this.router.navigate(['./']);
       }
     );
   }

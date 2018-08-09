@@ -3,18 +3,40 @@
     Welcome to Academy!
   </h1>
 </div>
-<nav>
-  <div class="col-sm-1">
-      <a routerLink="/about">
-        <button class="btn-success">About</button>
-      </a>
+<nav class="col-sm-12">
+  <div class="col-sm-8">
+      <div class="col-sm-2">
+          <a routerLink="/about">
+            <button class="btn-success">About</button>
+          </a>
+      </div>
+      <div *ngIf="!login" class="col-sm-2">
+          <a routerLink="/login">
+            <button class="btn-success">login</button>
+          </a>
+      </div>
+      <div *ngIf="!login" class="col-sm-2">
+        <a routerLink="/">
+          <button class="btn-success">Register</button>
+        </a>
+      </div>
+      
+      <div *ngIf="login" class="col-sm-2">
+          <button class="btn-success">Modules</button>
+      </div>
+      <div *ngIf="login" class="col-sm-2">
+          <button class="btn-success">Courses</button>
+      </div>
   </div>
-  <div *ngIf="!login" class="col-sm-1">
-      <a routerLink="/login">
-        <button class="btn-success">login</button>
-      </a>
-  </div>
-  <div *ngIf="login" class="col-sm-1">
-      <button (click)="logout()" class="btn-success">logout</button>
+  <div class="col-sm-4">
+      <div *ngIf="login" class="col-sm-4">
+          <button class="btn-success">{{"User:Valka"}}</button>
+      </div>
+      <div *ngIf="login" class="col-sm-8">
+          <button (click)="logout()" class="btn-success">logout</button>
+      </div>
   </div>
 </nav>
+<div class="img-wapper col-sm-12">
+  <img src="http://landscapemanagement.net/wp-content/uploads/2015/08/wf-academy.png" alt="academy picture">
+</div>
