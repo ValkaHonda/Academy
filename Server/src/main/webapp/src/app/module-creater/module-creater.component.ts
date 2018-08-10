@@ -14,7 +14,7 @@ export class ModuleCreaterComponent implements OnInit {
   exists:boolean;
 
   constructor(private moduleServices:ModuleService,private router: Router) {
-    this.exists = true;
+    this.exists = false;
    }
 
   ngOnInit() {
