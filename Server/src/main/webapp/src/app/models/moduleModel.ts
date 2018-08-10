@@ -4,4 +4,7 @@ export class ModuleModel{
     creationDate:Date;
     lastModifiedDate:Date;
     active:boolean;
+    constructor(name:String){
+        this.name = name;
+    }
 }

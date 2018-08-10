@@ -67,6 +67,12 @@ public class ModuleServicesImpl implements ModuleServices{
         return this.moduleRepository.exists(id);
     }
 
+    @Override
+    public boolean exists(String moduleName) {
+        Module module = this.moduleRepository.findModuleByName(moduleName);
+        return module!=null;
+    }
+
     private ModuleViewModel convertModuleToViewModel(final Module module) {
         return this.modelMapper.map(module,ModuleViewModel.class);
     }

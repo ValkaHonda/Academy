@@ -14,4 +14,5 @@ public interface ModuleServices {
     ModuleViewModel createModule(final ModuleBindingModel moduleBindingModel);
     ModuleViewModel updateModule(final ModuleBindingModel moduleBindingModel);
     boolean exists(final Integer id);
+    boolean exists(final String moduleName);
 }

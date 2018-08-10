@@ -14,7 +14,7 @@ export class ModulesComponent implements OnInit {
 
   ngOnInit() {
     this.moduleServics.getAllModules().subscribe(
-      (data:ModuleModel[]) => this.modules = data)
+      (data:ModuleModel[]) => this.modules = data
     );
   }
 

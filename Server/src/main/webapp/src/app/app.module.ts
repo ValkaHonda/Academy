@@ -24,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'modules', component: ModulesComponent },
   { path: 'courses', component: CoursesComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'modules/create', component: ModuleCreaterComponent },
   { path: '',      component: HomeComponent }
 ];
 
