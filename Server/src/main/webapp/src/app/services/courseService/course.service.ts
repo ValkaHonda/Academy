@@ -60,4 +60,16 @@ export class CourseService {
       };
     return this.httpClient.get(url,options);
   }
+
+  public getCoursesByUserId(userId:number){
+    let tokenId:String = "Bearer "+this.userStateService.getToken();
+    let url:string = "http://localhost:8080/course/getByUserId/"+userId;
+      const options = {
+        headers: new HttpHeaders({
+            'Authorization': tokenId.toString()
+          }
+        )
+      };
+    return this.httpClient.get(url,options);
+}
 }

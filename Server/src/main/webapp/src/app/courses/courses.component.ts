@@ -20,7 +20,7 @@ export class CoursesComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
   }
   goToCourse(id){
     this.router.navigate([`./courses/details/${id}`]);
