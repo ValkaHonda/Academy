@@ -7,22 +7,12 @@ import { RegisterModel } from '../../models/registerModel';
 @Injectable({
   providedIn: 'root'
 })
-export class UserLoginService {
+export class ModuleService {
   constructor(private httpClient:HttpClient, private userStateService:UserStateService) { }
-  
- 
-  
-  public login(username:String,password:String){
-     return this.httpClient.post("http://localhost:8080/authenticate",{
-        "username": username,
-        "password": password,
-        "isRememberMe": false
-      });
-  }
-  
-  public getUserByUserName(username:String){
+
+  public getAllModules(){
     let tokenId:String = "Bearer "+this.userStateService.getToken();
-    let url:string = "http://localhost:8080/user/GetByUserName/"+username;
+    let url:string = "http://localhost:8080/module/getAll";
       const options = {
         headers: new HttpHeaders({
             'Authorization': tokenId.toString()
@@ -30,17 +20,5 @@ export class UserLoginService {
         )
       };
     return this.httpClient.get(url,options);
- }
- 
- public registerUser(user:RegisterModel){
-  let tokenId:String = "Bearer "+this.userStateService.getToken();
-  let url:string = "http://localhost:8080/user/register";
-    const options = {
-      headers: new HttpHeaders({
-          'Authorization': tokenId.toString()
-        }
-      )
-    };
-  return this.httpClient.post(url,user,options);
  }
 }

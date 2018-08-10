@@ -1,3 +1,25 @@
-<p>
-  modules works!
-</p>
+<div>
+  <h1>Available modules</h1>
+</div>
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Creation date</th>
+      <th>last modified date</th>
+      <th>active</th>
+    </tr>
+    <tr *ngFor="let item of modules; let myIndex = index">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.creationDate}}</td> 
+        <td>{{item.lastModifiedDate}}</td>
+        <td>{{item.active}}</td>
+    </tr>
+</table>
+<a routerLink="/">
+  <button class="btn btn-success">Home</button>
+</a>
+<a routerLink="/modules">
+  <button class="btn btn-danger">Create new module</button>
+</a>

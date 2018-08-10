@@ -2,6 +2,7 @@ package academy.areas.courses.models.viewModels;
 
 import academy.areas.lessons.entities.Lesson;
 import academy.areas.modules.entities.Module;
+import academy.areas.modules.models.viewModels.ModuleViewModel;
 import academy.areas.users.entities.User;
 
 import java.util.Date;
@@ -13,7 +14,6 @@ public class CourseViewModel {
     private Date creationDate;
     private Date lastModifiedDate;
     private boolean isActive;
-    private Module module;
 
     public CourseViewModel() {
     }
@@ -57,13 +57,4 @@ public class CourseViewModel {
     public void setActive(boolean active) {
         isActive = active;
     }
-
-    public Module getModule() {
-        return module;
-    }
-
-    public void setModule(Module module) {
-        this.module = module;
-    }
-
 }

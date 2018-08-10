@@ -16,16 +16,20 @@
           </a>
       </div>
       <div *ngIf="!login" class="col-sm-2">
-        <a routerLink="/">
+        <a routerLink="/register">
           <button class="btn btn-success">Register</button>
         </a>
       </div>
       
       <div *ngIf="login" class="col-sm-2">
-          <button class="btn btn-success">Modules</button>
+          <a routerLink="/modules">
+            <button class="btn btn-success">Modules</button>
+          </a>
       </div>
       <div *ngIf="login" class="col-sm-2">
+        <a routerLink="/courses">
           <button class="btn btn-success">Courses</button>
+        </a>
       </div>
   </div>
   <div class="col-sm-4">
