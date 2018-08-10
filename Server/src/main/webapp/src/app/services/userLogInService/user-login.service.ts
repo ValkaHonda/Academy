@@ -4,6 +4,7 @@ import { Observable, Subscription } from '../../../../node_modules/rxjs';
 import { UserStateService } from '../user-state-service/user-state.service';
 import { RequestOptions, Headers } from '@angular/http';
 import { RegisterModel } from '../../models/registerModel';
+import { UserProfile } from '../../modules/UserProfile';
 @Injectable({
   providedIn: 'root'
 })
@@ -35,6 +36,18 @@ export class UserLoginService {
  public registerUser(user:RegisterModel){
   let tokenId:String = "Bearer "+this.userStateService.getToken();
   let url:string = "http://localhost:8080/user/register";
+    const options = {
+      headers: new HttpHeaders({
+          'Authorization': tokenId.toString()
+        }
+      )
+    };
+  return this.httpClient.post(url,user,options);
+ }
+
+ public joinCourse(user:UserProfile, courseId:number){
+  let tokenId:String = "Bearer "+this.userStateService.getToken();
+  let url:string = "http://localhost:8080/user/assignToCourse/"+courseId;
     const options = {
       headers: new HttpHeaders({
           'Authorization': tokenId.toString()

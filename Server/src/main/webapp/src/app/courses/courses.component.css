@@ -11,8 +11,24 @@ td, th {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: orange;
+}
+tr:nth-child(odd) {
+    background-color: rgb(236, 178, 236);
+}
+
+tr:hover{
+    background-color: greenyellow;
+    color: blue;
+}
+th{
+    background-color: aqua;
 }
 div,th,td{
     text-align: center;
+}
+
+.cancela,.cancela:link,.cancela:visited,.cancela:hover,.cancela:focus,.cancela:active{
+    color: inherit;
+    text-decoration: none;
 }

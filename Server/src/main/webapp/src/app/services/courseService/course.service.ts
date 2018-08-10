@@ -48,4 +48,16 @@ export class CourseService {
       };
     return this.httpClient.post(url,course,options);
    }
+
+   public findById(id:number){
+    let tokenId:String = "Bearer "+this.userStateService.getToken();
+    let url:string = "http://localhost:8080/course/getById/"+id;
+      const options = {
+        headers: new HttpHeaders({
+            'Authorization': tokenId.toString()
+          }
+        )
+      };
+    return this.httpClient.get(url,options);
+  }
 }

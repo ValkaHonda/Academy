@@ -9,13 +9,16 @@
         <th>last modified date</th>
         <th>active</th>
       </tr>
-      <tr *ngFor="let item of courses; let myIndex = index">
+      
+      <tr (click)="goToCourse(item.id)" *ngFor="let item of courses; let myIndex = index">
           <td>{{item.id}}</td>
           <td>{{item.name}}</td>
           <td>{{item.creationDate}}</td> 
           <td>{{item.lastModifiedDate}}</td>
           <td>{{item.active}}</td>
       </tr>
+    
+     
   </table>
   <a routerLink="/">
     <button class="btn btn-success">Home</button>

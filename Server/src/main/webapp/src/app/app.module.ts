@@ -14,11 +14,13 @@ import { ProfileComponent } from './profile/profile.component';
 import { CoursesComponent } from './courses/courses.component';
 import { RegisterComponent } from './register/register.component';
 import { ModuleCreaterComponent } from './module-creater/module-creater.component';
-import { CourseCreaterComponent } from './courses/course-creater/course-creater.component'; 
+import { CourseCreaterComponent } from './courses/course-creater/course-creater.component';
+import { CourseDatailsComponent } from './courses/course-datails/course-datails.component'; 
 
 
 
 const appRoutes: Routes = [
+  { path: 'courses/details/:id', component: CourseDatailsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about',      component: AboutComponent },
   { path: 'profile',      component: ProfileComponent },
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     CoursesComponent,
     RegisterComponent,
     ModuleCreaterComponent,
-    CourseCreaterComponent
+    CourseCreaterComponent,
+    CourseDatailsComponent
   ],
   imports: [
     RouterModule.forRoot(
