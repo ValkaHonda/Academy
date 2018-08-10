@@ -7,33 +7,39 @@
   <div class="col-sm-8">
       <div class="col-sm-2">
           <a routerLink="/about">
-            <button class="btn-success">About</button>
+            <button class="btn btn-success">About</button>
           </a>
       </div>
       <div *ngIf="!login" class="col-sm-2">
           <a routerLink="/login">
-            <button class="btn-success">login</button>
+            <button class="btn btn-success">login</button>
           </a>
       </div>
       <div *ngIf="!login" class="col-sm-2">
-        <a routerLink="/">
-          <button class="btn-success">Register</button>
+        <a routerLink="/register">
+          <button class="btn btn-success">Register</button>
         </a>
       </div>
       
       <div *ngIf="login" class="col-sm-2">
-          <button class="btn-success">Modules</button>
+          <a routerLink="/modules">
+            <button class="btn btn-success">Modules</button>
+          </a>
       </div>
       <div *ngIf="login" class="col-sm-2">
-          <button class="btn-success">Courses</button>
+        <a routerLink="/courses">
+          <button class="btn btn-success">Courses</button>
+        </a>
       </div>
   </div>
   <div class="col-sm-4">
       <div *ngIf="login" class="col-sm-4">
-          <button class="btn-success">{{"User:Valka"}}</button>
+          <a routerLink="/profile">
+            <button class="btn btn-info">{{userName}}</button>
+          </a>
       </div>
       <div *ngIf="login" class="col-sm-8">
-          <button (click)="logout()" class="btn-success">logout</button>
+          <button (click)="logout()" class="btn btn-success">logout</button>
       </div>
   </div>
 </nav>

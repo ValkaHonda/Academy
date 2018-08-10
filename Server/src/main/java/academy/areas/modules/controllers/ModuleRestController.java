@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/module")
 public class ModuleRestController {
     private ModuleServices moduleServices;
@@ -26,6 +27,12 @@ public class ModuleRestController {
     public List<ModuleViewModel> getModules(){
         return this.moduleServices.getAllModules();
     }
+
+    @GetMapping("/exists/{moduleName}")
+    public @ResponseBody Boolean exists(@PathVariable final String moduleName){
+        return this.moduleServices.exists(moduleName);
+    }
+
     @PostMapping("/create")
     public @ResponseBody  ModuleViewModel createModule(@RequestBody ModuleBindingModel moduleBindingModel){
         return this.moduleServices.createModule(moduleBindingModel);

@@ -1,0 +1,33 @@
+
+
+
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <div class="form-horizontal">
+            <fieldset>
+                <legend>Create Course</legend>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Module name:</label>
+                    <select class="form-control"  [(ngModel)]="selectedModule">
+                        <option *ngFor="let module of modules" [ngValue]="module">{{module.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Course name:</label>
+                    <div class="col-sm-4 ">
+                        <input [(ngModel)]="courseName" class="form-control" type="text">
+                    </div>
+                    <label *ngIf="exists" class="col-sm-4 control-label exists">Course already exists</label>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <a routerLink="/">
+                          <button class="btn btn-danger">cancel</button>
+                        </a>
+                        <button (click)="createCourse()" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+          </div>
+    </div>
+</div>

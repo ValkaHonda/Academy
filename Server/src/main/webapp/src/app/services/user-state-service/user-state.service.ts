@@ -23,4 +23,8 @@ export class UserStateService {
     return this.token.id_token;
   }
   
+  public getUserName():String{
+    this.token = JSON.parse(localStorage.getItem('currentUser'));
+    return this.token.userName;
+  }
 }

@@ -1,0 +1,47 @@
+<div>
+    <h1>
+        <label>Username:</label> {{userName}}
+    </h1>
+</div>
+<div>
+    <h1>
+        <label>email:</label> {{user?.email}}
+    </h1>
+</div>
+<div>
+    <h1>
+       <label>first name:</label> {{user?.firstName}}
+    </h1>
+</div>
+<div>
+    <h1>
+        <label>last name:</label> {{user?.lastName}}
+    </h1>
+</div>
+<div>
+    <a routerLink="/">
+        <button class="btn btn-success">Home</button>
+    </a>
+</div>
+<div>
+    <h1 id="course">Courses:</h1>
+</div>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Creation date</th>
+        <th>last modified date</th>
+        <th>active</th>
+    </tr>
+    <tr (click)="goToCourse(item.id)" *ngFor="let item of courses; let myIndex = index">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.creationDate}}</td> 
+        <td>{{item.lastModifiedDate}}</td>
+        <td>{{item.active}}</td>
+    </tr>
+</table>
+
+            
+    

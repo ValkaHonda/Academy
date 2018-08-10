@@ -1,0 +1,26 @@
+<div>
+  <h1>Available Courses</h1>
+</div>
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Creation date</th>
+      <th>last modified date</th>
+      <th>active</th>
+    </tr>
+    
+    <tr (click)="goToCourse(item.id)" *ngFor="let item of courses; let myIndex = index">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.creationDate}}</td> 
+        <td>{{item.lastModifiedDate}}</td>
+        <td>{{item.active}}</td>
+    </tr>
+</table>
+<a routerLink="/">
+  <button class="btn btn-success">Home</button>
+</a>
+<a routerLink="/courses/create">
+  <button class="btn btn-danger">Create new Course</button>
+</a>

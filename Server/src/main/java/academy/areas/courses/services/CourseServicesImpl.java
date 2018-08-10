@@ -5,6 +5,7 @@ import academy.areas.courses.entities.Course;
 import academy.areas.courses.models.bindingModel.CourseBindingModel;
 import academy.areas.courses.models.viewModels.CourseViewModel;
 import academy.areas.courses.repositories.CourseRepository;
+import academy.areas.users.entities.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class CourseServicesImpl implements CourseServices {
@@ -29,6 +31,11 @@ public class CourseServicesImpl implements CourseServices {
     public List<CourseViewModel> getAllCourses() {
         List<Course> coursesEntities = this.courseRepository.findAll();
         return this.convertToViewModelList(coursesEntities);
+    }
+
+    @Override
+    public List<CourseViewModel> getCoursesByUsers(Set<User> users) {
+        return this.convertToViewModelList(this.courseRepository.findCourseByUsers(users));
     }
 
     @Override
@@ -62,6 +69,15 @@ public class CourseServicesImpl implements CourseServices {
             return this.modelMapper.map(course,CourseViewModel.class);
         }
         return null;
+    }
+
+    @Override
+    public Boolean exists(final String courseName, final String moduleName) {
+        Course course = this.courseRepository.findCourseByName(courseName);
+        if (course != null){
+            return course.getModule().getName().equals(moduleName);
+        }
+        return false;
     }
 
     private CourseViewModel convertToViewModel(Course course){
