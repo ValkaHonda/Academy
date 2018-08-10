@@ -34,6 +34,12 @@ public class CourseRestController {
         return this.courseServices.getAllCourses();
     }
 
+    @GetMapping("/exists/{courseName}/{moduleName}")
+    public @ResponseBody Boolean exists(@PathVariable("courseName") final String courseName,
+                                        @PathVariable("moduleName") final String moduleName){
+        return this.courseServices.exists(courseName,moduleName);
+    }
+
     @PostMapping("/create/{moduleId}")
     public @ResponseBody  CourseViewModel createCourse(@RequestBody final CourseBindingModel courseBindingModel,
                                                        @PathVariable("moduleId") final Integer moduleId){

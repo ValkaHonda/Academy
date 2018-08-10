@@ -14,4 +14,5 @@ public interface CourseServices {
     Course getCourseEntityById(final Integer id);
     CourseViewModel createCourse(final CourseBindingModel courseBindingModel, Module module);
     CourseViewModel updateCourse(final CourseBindingModel courseBindingModel);
+    Boolean exists(final String courseName, final String moduleName);
 }

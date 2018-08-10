@@ -64,6 +64,15 @@ public class CourseServicesImpl implements CourseServices {
         return null;
     }
 
+    @Override
+    public Boolean exists(final String courseName, final String moduleName) {
+        Course course = this.courseRepository.findCourseByName(courseName);
+        if (course != null){
+            return course.getModule().getName().equals(moduleName);
+        }
+        return false;
+    }
+
     private CourseViewModel convertToViewModel(Course course){
         return this.modelMapper.map(course,CourseViewModel.class);
     }

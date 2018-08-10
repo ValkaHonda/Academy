@@ -13,7 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CoursesComponent } from './courses/courses.component';
 import { RegisterComponent } from './register/register.component';
-import { ModuleCreaterComponent } from './module-creater/module-creater.component'; 
+import { ModuleCreaterComponent } from './module-creater/module-creater.component';
+import { CourseCreaterComponent } from './courses/course-creater/course-creater.component'; 
 
 
 
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
   { path: 'courses', component: CoursesComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'modules/create', component: ModuleCreaterComponent },
+  { path: 'courses/create', component: CourseCreaterComponent },
   { path: '',      component: HomeComponent }
 ];
 
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     CoursesComponent,
     RegisterComponent,
-    ModuleCreaterComponent
+    ModuleCreaterComponent,
+    CourseCreaterComponent
   ],
   imports: [
     RouterModule.forRoot(

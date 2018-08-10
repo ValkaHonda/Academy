@@ -6,6 +6,7 @@ import { RequestOptions, Headers } from '@angular/http';
 import { RegisterModel } from '../../models/registerModel';
 import { ModuleModel } from '../../models/moduleModel';
 import { ModuleCreation } from '../../models/moduleCreationModel';
+import { CourseCreationModel } from '../../models/courses/courseCreationModel';
 @Injectable({
   providedIn: 'root'
 })
@@ -23,4 +24,28 @@ export class CourseService {
         };
       return this.httpClient.get(url,options);
   }
+
+  public exists(courseName:String,moduleName:String){
+    let tokenId:String = "Bearer "+this.userStateService.getToken();
+    let url:string = "http://localhost:8080/course/exists/" + courseName + "/" + moduleName;
+      const options = {
+        headers: new HttpHeaders({
+            'Authorization': tokenId.toString()
+          }
+        )
+      };
+    return this.httpClient.get(url,options);
+  }
+
+  public addCourse(course:CourseCreationModel,moduleId:number){
+    let tokenId:String = "Bearer "+this.userStateService.getToken();
+    let url:string = "http://localhost:8080/course/create/"+moduleId;
+      const options = {
+        headers: new HttpHeaders({
+            'Authorization': tokenId.toString()
+          }
+        )
+      };
+    return this.httpClient.post(url,course,options);
+   }
 }
